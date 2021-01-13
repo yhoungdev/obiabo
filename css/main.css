@@ -1,0 +1,43 @@
+*{
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --col:rgb(31, 31, 31);
+}
+
+.container .content {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+.container .content .text-center > h3 {
+    font-size: 50px;
+    text-transform: uppercase;
+    font-family: 'Potta One', cursive;
+    
+
+}
+
+.container .content .text-center .icons {
+    font-size: 30px;
+    cursor: pointer;
+    
+}
+
+.container .content .fa-angle-right {
+    font-size: 70px;
+    font-weight: 600;
+}
+a:link {
+    text-decoration: none;
+    color: var(--col);
+}
+
+img {
+    width: 50px;
+}
+
