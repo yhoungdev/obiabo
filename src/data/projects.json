@@ -1,0 +1,32 @@
+[
+   {
+    "name": "Gitsecure",
+    "description": "Securely monitor and manage secrets with Gitsecure. Detect and manage leaked credentials in your codebase seamlessly.",
+    "url": "https://www.gitsecure.dev/"
+   },
+    {
+        "name": "Breedbudy",
+        "description": "An app that connects pet owners and cross-breeders together.",
+        "url": ""
+    },
+    {
+        "name": "Bookhive",
+        "description": "An operating system for bibliophiles.",
+        "url": "https://github.com/Bookhive-Club/Bookhive-Client"
+    },
+    {
+        "name": "SolHaven",
+        "description": "A secure and user-friendly Solana CLI wallet.",
+        "url": "https://github.com/yhoungdev/solhaven"
+    },
+    {
+        "name": "Solana summer compressed NFT session",
+        "description": "Educational sessions about Solana's compressed NFTs.",
+        "url": "https://solana.fm/address/3KxATdmr1wbjscqw8yAct2p1EqVLhUCnc2yGk8JH1DR4/transactions?cluster=mainnet-alpha"
+    },
+    {
+        "name": "Solmart",
+        "description": "A Solana point-of-sale app that helps merchants receive payment in Solana with Solana Pay.",
+        "url": "https://github.com/4rjunc/solmart"
+    }
+]

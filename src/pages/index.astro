@@ -1,0 +1,32 @@
+---
+import Header from '../components/header/index.astro'
+import Project from '../components/project.astro'
+import About from '../components/sections/about.astro'
+import Blog from '../components/sections/writings.astro'
+import '../../src/style/index.css'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+   
+	<Header/>
+    <div class="max-w-2xl mx-auto px-4 py-8 font-serif">
+     
+
+     <About more={true}/>
+
+      <Project/>
+
+
+      <!-- <Blog/> -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+---
+    import projects from '../data/projects.json'
+---
+
+<section class="mb-12">
+    <h2 class="ibm-plex-mono-semibold text-xl mb-4">Made by Obiabo</h2>
+    <div class="space-y-8">
+        {projects.map((project) => (
+            <div>
+                <a href={project.url} target="_blank">
+                    <h3 class="text-md ibm-plex-mono-bold">{project.name}</h3>
+                </a>
+                <p class="text-sm ibm-plex-mono-regular mt-2">{project.description}</p>
+            </div>
+        ))}
+    </div>
+</section>
