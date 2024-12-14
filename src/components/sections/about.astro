@@ -1,13 +1,14 @@
 ---
   const { more  } = Astro.props
+  import {Content as AboutContent} from '../../data/about.md'
 ---
 
 <section class="mb-12">
     
-    <h2 class="ibm-plex-mono-semibold text-xl mb-4">About me</h2>
-    <p class="ibm-plex-mono-medium ">
-      I've been crafting my dreams for as long as I can remember. As a creator and software engineer, I am passionate about blockchain technology and the intricacies of Linux. I believe I can achieve anything I set my mind to.
-    </p>
+   
+    <article class="ibm-plex-mono-medium text-sm ">
+      <AboutContent />
+    </article>
     <br>
 
     
