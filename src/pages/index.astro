@@ -2,7 +2,6 @@
 import Header from '../components/header/index.astro'
 import Project from '../components/project.astro'
 import About from '../components/sections/about.astro'
-import Blog from '../components/sections/writings.astro'
 import '../../src/style/index.css'
 
 ---
@@ -18,14 +17,12 @@ import '../../src/style/index.css'
     
     <title>Emmanuel Obiabo</title>
     
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GSQTWFBD18"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-GSQTWFBD18"></script>
+    <script is:inline>
+      import { initializeAnalytics } from '../utils/analytics';
+      initializeAnalytics();
+    </script>
 
-  gtag('config', 'G-GSQTWFBD18');
-</script>
 
   </head>
   <body>
