@@ -1,7 +1,11 @@
 # Welcome to My Notes! 👋
 
 
-This is the place where curiosity, wisdom, and random musings collide. Here’s what you’ll find:
+Hooo Hooo Hooo, Welcome to the bright side of my internet! This is one thing even a black hole 🕳️ can’t absorb or draw in 😂. Now i and [[Stephen Hawking](https://en.wikipedia.org/wiki/Stephen_Hawking)] needs to have a talk 😂
+
+<br>
+
+*This place is*
 
 - 📝 A cozy little nook for my notes.
 - 💭 A haven of thoughts, trials, and anecdotes.
