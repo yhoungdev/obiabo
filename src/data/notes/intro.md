@@ -1,7 +1,5 @@
-# Welcome to My Notes! 👋
 
-
-Hooo Hooo Hooo, Welcome to the bright side of my internet! This is one thing even a black hole 🕳️ can’t absorb or draw in 😂. Now i and [[Stephen Hawking](https://en.wikipedia.org/wiki/Stephen_Hawking)] needs to have a talk 😂
+Hooo Hooo Hooo, Welcome 👋 to the bright side of my internet! This is one thing even a black hole 🕳️ can’t absorb or draw in 😂. Now i and [[Stephen Hawking](https://en.wikipedia.org/wiki/Stephen_Hawking)] needs to have a talk 😂
 
 <br>
 
