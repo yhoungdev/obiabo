@@ -1,5 +1,6 @@
 ---
   const { intro  } = Astro.props
+  import Nav from './nav.astro'
 
   const personal_urls = [
     {
@@ -10,6 +11,11 @@
       title: 'LinkedIn',
       url: 'https://www.linkedin.com/in/emmanuel-obiabo-5a66371aa/'
     },
+    {
+      title: 'Twitter',
+      url: 'https://x.com/obiabo_immanuel'
+    },
+    
     
     
   ]
@@ -17,6 +23,9 @@
 ---
 
 <div>
+
+  <Nav/>
+  
   <header class="text-center mb-12 mt-12">
     <img
       src="https://avatars.githubusercontent.com/u/54102389?v=4"
@@ -26,9 +35,7 @@
       class="rounded-lg mx-auto mb-4"
     />
 
-    <p>
-      whoami 👋
-     </p>
+   
     <h1 class="text-3xl font-bold mb-2">Emmanuel Obiabo</h1>
     
     <div class="flex items-center gap-2 justify-center">

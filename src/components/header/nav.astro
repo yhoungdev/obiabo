@@ -1,28 +1,35 @@
 ---
-    const navItems =[
-        {
-            title: 'Home',
-            path: '/home'
-        },
-        {
-            title: 'Notes',
-            path: '/note'
-        },
-        {
-            
-        }
-    ]
+const navItems = [
+  {
+    title: 'Home',
+    path: '/'
+  },
+  {
+    title: 'Howdy',
+    path: '/about'
+  },
+  {
+    title: 'Notes',
+    path: '/notes'
+  },
+  {
+    title: 'Reach',
+    path: '/reach'
+  },
+];
 ---
 
-<nav class="flex items-center w-full md:w-[70%] mx-auto mt-4">
-    <div>
-      <img src="/public/logo.svg" width="100" height="100" alt="">
-    </div>
-
-
-    <div class="flex items-center gap-2">
-
-    </div>
-
-
-  </nav>
+<nav class="flex items-center justify-center mx-auto mt-4">
+  <div class="flex items-center text-sm gap-4">
+    {navItems.map((item) => (
+      <a
+        href={item.path}
+        class={`hover:text-yellow-600 hover:underline ${
+          Astro.url.pathname === item.path ? 'text-yellow-600 underline' : ''
+        }`}
+      >
+        {item.title}
+      </a>
+    ))}
+  </div>
+</nav>

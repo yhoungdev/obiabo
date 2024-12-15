@@ -1,9 +1,4 @@
 [
-   {
-    "name": "Gitsecure",
-    "description": "Securely monitor and manage secrets with Gitsecure. Detect and manage leaked credentials in your codebase seamlessly.",
-    "url": "https://www.gitsecure.dev/"
-   },
     {
         "name": "Breedbudy",
         "description": "An app that connects pet owners and cross-breeders together.",
@@ -17,7 +12,7 @@
     {
         "name": "SolHaven",
         "description": "A secure and user-friendly Solana CLI wallet.",
-        "url": "https://github.com/yhoungdev/solhaven"
+        "url": "https://www.npmjs.com/package/solhaven"
     },
     {
         "name": "Solana summer compressed NFT session",
@@ -28,5 +23,15 @@
         "name": "Solmart",
         "description": "A Solana point-of-sale app that helps merchants receive payment in Solana with Solana Pay.",
         "url": "https://github.com/4rjunc/solmart"
+    },
+    {
+        "name": "Citrus 🍊",
+        "description": "A browser extension that lets you checkout with lightning network and Solana ( Solana Pay ) on Jumia or Konga ",
+        "url": "https://github.com/yhoungdev/citrus"
+    },
+    {
+        "name": "CTRL+Z Life 🌴  ",
+        "description": "A browser extention for undoing bad browsing habits ( register and restrict erotic sites ). and also focus on productivity 🌴",
+        "url": "https://github.com/yhoungdev/ctrlz-life"
     }
 ]
