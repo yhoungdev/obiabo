@@ -9,7 +9,7 @@ Hooo Hooo Hooo, Welcome 👋 to the bright side of my internet! This is one thin
 - 💭 A haven of thoughts, trials, and anecdotes.
 - 🔍 A space to scribble the things I’ve tried and would like to try.
 - ✨ A digital diary where curiosity resides.
-- 📖 If I were to see this as a place in the Bible, it would be the book of **PROVERBS**, **PSALMS**, and **SONGS OF SOLOMON** (Because why? Knowledge,  OT, and my funny thoughts flow like Lagos flood 🌊).
+- 📖 If I were to see this as a place in the Bible, it would be the book of **PROVERBS**, **PSALMS**, and **SONGS OF SOLOMON** (Because why? Knowledge,  OT, and my funny thoughts go deflow like Lagos flood 🌊).
 
 <br>
 
