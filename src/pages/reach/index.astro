@@ -27,12 +27,12 @@ const personal_urls = [
   {
     title: 'Nostr',
     url: 'https://snort.social/nprofile1qqs2c3g85ck4qwpakm9nxzlhfved8yykqylcwdu34ge8whkcxeqx4dqka3xww',
-    description: '🔗 A decentralized dream where I post just for the blockchain of it.',
+    description: '🔗 A decentralized dream where I post just for the blockchain of it. ( Speaking of decentralized, is Nostr really decentralized ? We shall find out in my little internet note 😂) ',
   },
   {
     title: 'Farcaster',
     url: 'https://warpcast.com/obiabo',
-    description: '🚀 A decentralized social space where I cast my thoughts into the void, hoping someone catches them.',
+    description: '🚀 A decentralized social space where I cast my thoughts into the void, hoping someone catches them. (Same as this also is it really decentralize ? Paying $3 to signup dosnt make it decentralize, but we would find out in my little note )',
   },
 ];
 ---
@@ -61,8 +61,8 @@ const personal_urls = [
             <h4 class="my-4">📬 Find Me Online</h4>
             <ul>
                 {personal_urls.map((item) => (
-                    <li>
-                        <a href={item.url} target="_blank" class="text-yellow-600 underline">
+                    <li class="my-2">
+                        <a href={item.url} target="_blank" class="text-yellow-600 underline ">
                             {item.title}
                         </a>: {item.description}
                     </li>
