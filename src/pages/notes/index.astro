@@ -1,7 +1,7 @@
 ---
 import Header from '../../components/header/index.astro'
 import '../../style/index.css'
-import Nav from '../../components/header/nav.astro'
+import { Content as NoteContent } from '../../data/notes/intro.md';
 ---
 
 
@@ -15,21 +15,9 @@ import Nav from '../../components/header/nav.astro'
     <Header/>
 
     <div class="max-w-2xl mx-auto px-4 py-8 font-serif">
-        <div>
-            <h4>🌟 Hoo! Welcome to the bright side of my internet! 🌟</h4>
     
-            <ul>
-              <li>📝 A cozy little nook for my notes.</li>
-              <li>💭 A haven of thoughts, trials, and anecdotes.</li>
-              <li>🔍 A space to scribble the things I’ve tried and would like to try.</li>
-              <li>✨ A digital diary where curiosity resides.</li>
-            </ul>
-        </div>
-        <section id="note" >
-        
-           
-            
-            
+        <section id="note" class="" >
+            <NoteContent/>    
         </section>
     </div>
 </body>
