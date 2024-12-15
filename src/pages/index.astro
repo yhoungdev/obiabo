@@ -4,6 +4,7 @@ import Project from '../components/project.astro'
 import About from '../components/sections/about.astro'
 import Blog from '../components/sections/writings.astro'
 import '../../src/style/index.css'
+
 ---
 
 <!DOCTYPE html>
@@ -13,7 +14,19 @@ import '../../src/style/index.css'
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+
+    
     <title>Emmanuel Obiabo</title>
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GSQTWFBD18"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GSQTWFBD18');
+</script>
+
   </head>
   <body>
    
@@ -24,9 +37,6 @@ import '../../src/style/index.css'
      <About more={true}/>
 
       <Project/>
-
-
-      <!-- <Blog/> -->
     </div>
   </body>
 </html>

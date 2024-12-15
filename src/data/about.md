@@ -1,4 +1,4 @@
-### Whoami 👋 
+### Whoami 👋
 
 <br>
 
@@ -10,13 +10,11 @@ I'm a huge **Linux** and **open-source** fan. Over my 4 years of using Linux, I'
 
 <br>
 
-My technical interests include **low-level programming** (currently learning ``` Rust ``` ), **Networking**, and **Distributed Systems**. I’ve even tried running a **Bitcoin node** with **Umbrel** and a **Respberry PI 4**. 
+My technical interests include **low-level programming** (currently learning `Rust` ), **Networking**, and **Distributed Systems**. I’ve even tried running a **Bitcoin node** with **Umbrel** and a **Respberry PI 4**.
 
 <br>
 
-When it comes to the **Blockchain ecosystem**, I am particularly interested in **Bitcoin** and **Solana**  (yes i know blockchain is not only all about that). I have built projects on the **Solana** blockchain as a **Solana Summer Fellow '24**.
-
-
+When it comes to the **Blockchain ecosystem**, I am particularly interested in **Bitcoin** and **Solana** (yes i know blockchain is not only all about that). I have built projects on the **Solana** blockchain as a **Solana Summer Fellow '24**.
 
 <br>
 
