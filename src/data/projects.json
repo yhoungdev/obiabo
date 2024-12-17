@@ -1,26 +1,32 @@
 [
+
   {
-    "name": "Breedbudy",
+    "name": " Signaly 📈 ",
+    "description": "A platform for buying and selling ( crypto , stock , forext ) signals ",
+    "url": ""
+  },
+  {
+    "name": "Breedbudy 🐾",
     "description": "An app that connects pet owners and cross-breeders together.",
     "url": ""
   },
   {
-    "name": "Bookhive",
+    "name": "Bookhive 📕 ",
     "description": "An operating system for bibliophiles.",
     "url": "https://github.com/Bookhive-Club/Bookhive-Client"
   },
   {
-    "name": "SolHaven",
+    "name": "SolHaven 📱",
     "description": "A secure and user-friendly Solana CLI wallet.",
     "url": "https://www.npmjs.com/package/solhaven"
   },
   {
-    "name": "Solana summer compressed NFT session",
+    "name": "Solana summer compressed NFT session 🎨",
     "description": "Educational sessions about Solana's compressed NFTs.",
     "url": "https://solana.fm/address/3KxATdmr1wbjscqw8yAct2p1EqVLhUCnc2yGk8JH1DR4/transactions?cluster=mainnet-alpha"
   },
   {
-    "name": "Solmart",
+    "name": "Solmart 🏦",
     "description": "A Solana point-of-sale app that helps merchants receive payment in Solana with Solana Pay.",
     "url": "https://github.com/4rjunc/solmart"
   },
