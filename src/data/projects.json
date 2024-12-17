@@ -3,13 +3,9 @@
   {
     "name": " Signaly 📈 ",
     "description": "A platform for buying and selling ( crypto , stock , forext ) signals ",
-    "url": ""
+    "url": "https://signal-app-two.vercel.app/"
   },
-  {
-    "name": "Breedbudy 🐾",
-    "description": "An app that connects pet owners and cross-breeders together.",
-    "url": ""
-  },
+
   {
     "name": "Bookhive 📕 ",
     "description": "An operating system for bibliophiles.",
@@ -39,5 +35,10 @@
     "name": "CTRL+Z Life 🌴  ",
     "description": "A browser extention for undoing bad browsing habits ( register and restrict erotic sites ). and also focus on productivity 🌴",
     "url": "https://github.com/yhoungdev/ctrlz-life"
+  },
+  {
+    "name": "Breedbudy 🐾",
+    "description": "An app that connects pet owners and cross-breeders together.",
+    "url": ""
   }
 ]
