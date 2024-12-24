@@ -1,6 +1,12 @@
 [
 
   {
+    "name": "Potato Squeezy 🍟",
+    "description": "Your GitHub just got starchier—and way cooler. When life gives you potatoes, don’t make chips... squeeze out some Bitcoin instead! With PotatoSqueezy, get zapped for your awesome projects—or even better, on your birthday! 🥔🎉",
+    "url": "https://github.com/yhoungdev/potatoe-squeezy"
+  },
+
+  {
     "name": " Signaly 📈 ",
     "description": "A platform for buying and selling ( crypto , stock , forext ) signals ",
     "url": "https://signal-app-two.vercel.app/"
