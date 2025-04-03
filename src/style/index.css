@@ -7,6 +7,13 @@
   line-height: 2em;
 }
 
+
+a {
+  color: #c8ccda;
+  text-decoration: none;
+  background-color: transparent !important  ;
+}
+
 .ibm-plex-mono-thin {
   font-family: "IBM Plex Mono", monospace;
   font-weight: 100;

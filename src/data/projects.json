@@ -2,14 +2,20 @@
 
   {
     "name": "Potato Squeezy 🍟",
-    "description": "Your GitHub just got starchier—and way cooler. When life gives you potatoes, don’t make chips... squeeze out some Bitcoin instead! With PotatoSqueezy, get zapped for your awesome projects—or even better, on your birthday! 🥔🎉",
-    "url": "https://github.com/yhoungdev/potatoe-squeezy"
+    "description": "Support your favorite GitHub contributors with crypto! 🥔✨ Show love to open-source developers through fast, secure, and hassle-free crypto tipping. 🚀💖",
+    "url": "https://www.potatoesqueezy.xyz/"
   },
 
   {
-    "name": " Signaly 📈 ",
-    "description": "A platform for buying and selling ( crypto , stock , forext ) signals ",
-    "url": "https://signal-app-two.vercel.app/"
+    "name": "Breedbudy 🐾",
+    "description": "An app that connects pet owners and cross-breeders together.",
+    "url": "https://breedbuddy.xyz/"
+  },
+
+  {
+    "name": "Bllow 💨",
+    "description": "Support your creative work",
+    "url": "https://bllow-eight.vercel.app/"
   },
 
   {
@@ -31,20 +37,5 @@
     "name": "Solmart 🏦",
     "description": "A Solana point-of-sale app that helps merchants receive payment in Solana with Solana Pay.",
     "url": "https://github.com/4rjunc/solmart"
-  },
-  {
-    "name": "Citrus 🍊",
-    "description": "A browser extension that lets you checkout with lightning network and Solana ( Solana Pay ) on Jumia or Konga ",
-    "url": "https://github.com/yhoungdev/citrus"
-  },
-  {
-    "name": "CTRL+Z Life 🌴  ",
-    "description": "A browser extention for undoing bad browsing habits ( register and restrict erotic sites ). and also focus on productivity 🌴",
-    "url": "https://github.com/yhoungdev/ctrlz-life"
-  },
-  {
-    "name": "Breedbudy 🐾",
-    "description": "An app that connects pet owners and cross-breeders together.",
-    "url": ""
   }
 ]

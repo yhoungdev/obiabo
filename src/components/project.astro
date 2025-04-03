@@ -6,11 +6,13 @@
     <h2 class="ibm-plex-mono-semibold text-xl mb-4">Highlights</h2>
     <div class="space-y-8">
         {projects.map((project) => (
-            <div>
-                <a href={project.url} target="_blank">
-                    <h3 class="text-md ibm-plex-mono-bold">{project.name}</h3>
+            <div class="p-4  hover:bg-gray-100/5 rounded-lg transition duration-300">
+                <a href={project.url} target="_blank" >
+                    <h3 class="text-md ibm-plex-mono-bold bg-transparent text-yellow-600">{project.name}</h3>
                 </a>
-                <p class="text-sm ibm-plex-mono-regular mt-2">{project.description}</p>
+                <a href={project.url} target="_blank">
+                    <p class="text-sm ibm-plex-mono-regular bg-transparent mt-2 text-gray-400 leading-6">{project.description}</p>
+                </a>
             </div>
         ))}
     </div>
