@@ -5,6 +5,10 @@ const navItems = [
     path: '/'
   },
   {
+    title: 'Projects',
+    path: '#projects'
+  },
+  {
     title: 'Howdy',
     path: '/about'
   },
@@ -21,15 +25,20 @@ const navItems = [
 
 <nav class="flex items-center justify-center mx-auto mt-4">
   <div class="flex items-center text-sm gap-4">
-    {navItems.map((item) => (
-      <a
-        href={item.path}
-        class={`hover:text-yellow-600 hover:underline ${
-          Astro.url.pathname === item.path ? 'text-yellow-600 underline' : ''
-        }`}
-      >
-        {item.title}
-      </a>
-    ))}
+    {navItems.map((item) => {
+      const isProjects = item.title === 'Projects';
+      const href = isProjects && Astro.url.pathname !== '/' ? `/${item.path}` : item.path;
+
+      return (
+        <a
+          href={href}
+          class={`hover:text-yellow-600 hover:underline ${
+            Astro.url.pathname === item.path ? 'text-yellow-600 underline' : ''
+          }`}
+        >
+          {item.title}
+        </a>
+      );
+    })}
   </div>
 </nav>

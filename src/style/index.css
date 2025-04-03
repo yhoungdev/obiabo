@@ -7,6 +7,9 @@
   line-height: 2em;
 }
 
+html {
+  scroll-behavior: smooth !important;
+}
 
 a {
   color: #c8ccda;
