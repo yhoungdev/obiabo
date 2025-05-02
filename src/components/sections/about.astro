@@ -1,13 +1,14 @@
 ---
   const { more  } = Astro.props
-  import {Content as AboutContent} from '../../data/about.md'
+
+  import { Content as Intro } from '../../data/intro.md'
 ---
 
 <section class="mb-12">
     
    
     <article class="ibm-plex-mono-medium text-sm ">
-      <AboutContent />
+      <Intro />
     </article>
     <br>
 
@@ -15,7 +16,7 @@
     
     {
       more && <a href="/about" class="text-yellow-600" >
-      View
+      Discover more about me 🚀
     </a>
     }
   </section>

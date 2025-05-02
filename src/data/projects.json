@@ -7,6 +7,12 @@
   },
 
   {
+    "name": "Manifold SDK 🦀",
+    "description": "After noticing a gap in Rust SDKs for many popular services, I decided to take the initiative and build them, maybe you've been waiting for this too.",
+    "url": "https://github.com/yhoungdev/manifold"
+  },
+
+  {
     "name": "Breedbudy 🐾",
     "description": "An app that connects pet owners and cross-breeders together.",
     "url": "https://breedbuddy.xyz/"
@@ -15,7 +21,7 @@
   {
     "name": "Bllow 💨",
     "description": "Support your creative work",
-    "url": "https://bllow-eight.vercel.app/"
+    "url": "https://bllow.co/"
   },
 
   {
@@ -23,6 +29,13 @@
     "description": "An operating system for bibliophiles.",
     "url": "https://github.com/Bookhive-Club/Bookhive-Client"
   },
+
+  {
+    "name": "Silo 🗼 💾",
+    "description": "An open-source, self-hosted Network-as-a-Service for file storage and sharing (over LAN). Written in Rust, Silo is built for personal use, but the community is welcome to deploy and customize it for their own networks.",
+    "url": "https://github.com/yhoungdev/silo"
+  },  
+
   {
     "name": "SolHaven 📱",
     "description": "A secure and user-friendly Solana CLI wallet.",
