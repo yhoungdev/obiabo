@@ -32,8 +32,8 @@ const navItems = [
       return (
         <a
           href={href}
-          class={`hover:text-yellow-600 hover:underline ${
-            Astro.url.pathname === item.path ? 'text-yellow-600 underline' : ''
+          class={`hover:text-default hover:underline ${
+            Astro.url.pathname === item.path ? 'text-default underline' : ''
           }`}
         >
           {item.title}
