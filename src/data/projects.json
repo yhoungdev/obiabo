@@ -11,6 +11,11 @@
     "description": "After noticing a gap in Rust SDKs for many popular services, I decided to take the initiative and build them, maybe you've been waiting for this too.",
     "url": "https://github.com/yhoungdev/manifold"
   },
+  {
+    "name": "Glimpse 😈",
+    "description": "Glimpse is a lightweight Rust daemon that quietly monitors your system and sends real-time alerts to Telegram—covering CPU, memory, disk, and network usage.",
+    "url": "https://github.com/yhoungdev/gimpse"
+  },
 
   {
     "name": "Breedbudy 🐾",
