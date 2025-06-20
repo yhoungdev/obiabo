@@ -1,11 +1,19 @@
 [
-
   {
     "name": "Potato Squeezy 🍟",
     "description": "Support your favorite GitHub contributors with crypto! 🥔✨ Show love to open-source developers through fast, secure, and hassle-free crypto tipping. 🚀💖",
     "url": "https://www.potatoesqueezy.xyz/"
   },
-
+  {
+    "name": "Rodoh 🌶️",
+    "description": "Capture your screen with sleek, dynamic zoom and pan effects.",
+    "url": "http://rodoh.xyz/"
+  },
+  {
+    "name": "Tomatoe 🍅",
+    "description": "Turn your smartphone into a remote messenger for your Android TV 🍅📺",
+    "url": "https://github.com/yhoungdev/tomatoe"
+  },
   {
     "name": "Manifold SDK 🦀",
     "description": "After noticing a gap in Rust SDKs for many popular services, I decided to take the initiative and build them, maybe you've been waiting for this too.",
@@ -39,7 +47,7 @@
     "name": "Silo 🗼 💾",
     "description": "An open-source, self-hosted Network-as-a-Service for file storage and sharing (over LAN). Written in Rust, Silo is built for personal use, but the community is welcome to deploy and customize it for their own networks.",
     "url": "https://github.com/yhoungdev/silo"
-  },  
+  },
 
   {
     "name": "SolHaven 📱",
