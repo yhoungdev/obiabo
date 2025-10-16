@@ -7,14 +7,12 @@ import react from "@astrojs/react";
 
 import mdx from "@astrojs/mdx";
 
-import db from "@astrojs/db";
-
 import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-  integrations: [tailwind(), react(), mdx(), db()],
+  integrations: [tailwind(), react(), mdx()],
 
   adapter: node({
     mode: "standalone",

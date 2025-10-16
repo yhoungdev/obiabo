@@ -34,9 +34,9 @@ Astro.response.headers.set('Content-Type', 'text/html; charset=utf-8');
 <main class="max-w-4xl mx-auto px-4 py-8">
   <header class="mb-8">
     <h1 class="text-xl font-bold mb-4">
-      <span class="text-default">Welcome to my corner of the internet!</span>
+      <span class="text-default text-md">Welcome to my corner of the internet!</span>
     </h1>
-    <p class="text-lg italic mb-6">
+    <p class="text-sn italic mb-6">
       This is where I share notes, thoughts, things I've tried and want to try, and personal experiences and learnings.
     </p>
     <p class="mb-8">
@@ -45,19 +45,17 @@ Astro.response.headers.set('Content-Type', 'text/html; charset=utf-8');
   </header>
 
   <section class="mb-12">
-    <h2 class="text-lg font-semibold mb-6">Here are my notes – dive in and explore:</h2>
-     
     <div class="space-y-6 ">
       {sortedNotes.map((note) => (
         <div class="mt-4">
           <div class="">
-            <h3 class="text-lg italic font-medium mb-3">
+            <h3 class="text-md italic font-medium mb-3">
               <a href={`/notes/${note.slug}`} class="text-default hover:underline">
                 {note.data.title}
               </a>
             </h3>
             {note.data.description && (
-              <p class="mb-4 italic">{note.data.description}</p>
+              <p class="mb-4 text-sm italic">{note.data.description}</p>
             )}
             <p class="text-sm italic">
               Published on {note.data.pubDate.toLocaleDateString("en-US", { dateStyle: "long" })}
