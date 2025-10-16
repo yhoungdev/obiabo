@@ -3,16 +3,17 @@ import Header from '../../components/header/index.astro'
 import '../../style/index.css'
 ---
 
-<Header title="Open Source Contributions" />
-	<main class="container mx-auto px-4 py-8 max-w-4xl  italic">
-		<header class="mb-8">
-			<h1 class="text-md italic font-bold mb-4">
-				<span class="text-default">Open Source Contributions</span>
-			</h1>
-			<p class="text-lg italic">
-				My journey of contributing to various open source projects across different ecosystems
-			</p>
-		</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Source Contributions</title>
+</head>
+<body>
+    <Header title="Open Source Contributions" />
+    <main class="container mx-auto px-4 py-8 max-w-4xl  italic">
+	
 
 		<section class="mb-12">
 			<h2 class="text-md font-semibold mb-4">Overview</h2>
@@ -28,7 +29,7 @@ import '../../style/index.css'
 			<div class="space-y-8">
 				<div class="text-default">
 					<h3 class="text-md italic font-medium mb-3 text-default">OFFER-HUB</h3>
-					<p class="mb-4 italic">A platform for job offers and opportunities</p>
+					<p class="mb-4 italic text-sm">A platform for job offers and opportunities</p>
 					<ul class="space-y-2 text-sm">
 						<li><a href="https://github.com/OFFER-HUB/offer-hub/pull/698" class="text-blue-600 hover:underline" target="_blank">Pull Request #698</a> - Added a specialized freelancer-search hook with advanced filters, caching, and performance optimizations</li>
 						<li><a href="https://github.com/OFFER-HUB/offer-hub/pull/705" class="text-blue-600 hover:underline" target="_blank">Pull Request #705</a> - Build POST /auth/verify to validate credentials via @simplewebauthn/server against SQLite, return status, add mocked tests, and ensure linting/CI</li>
@@ -118,4 +119,5 @@ import '../../style/index.css'
 		</section>
 
 	</main>
-</Layout>
+</body>
+</html>
