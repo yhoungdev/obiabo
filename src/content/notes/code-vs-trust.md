@@ -46,4 +46,5 @@ Up to this blessed day, I'm still afraid of elevators. It's where gravity and my
 
 --- -->
 
-_Last updated: October 16, 2025_
+<br/>
+Last updated: October 16, 2025

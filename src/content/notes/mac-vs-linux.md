@@ -13,7 +13,6 @@ _I've been using Linux for 4 years, so why do I still prefer Linux over Mac?_
 
 After 4 years of dedicated Linux usage, I've made the switch to Mac as my primary work machine. But here's the thing – my heart still belongs to Linux.
 
-## My Linux Journey
-coming soon.
 
-_Last updated: October 16, 2025_
+<br/>
+Last updated: October 16, 2025

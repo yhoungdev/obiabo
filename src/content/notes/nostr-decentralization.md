@@ -47,4 +47,5 @@ Nostr (Notes and Other Stuff Transmitted by Relays) is a decentralized protocol 
 
 
 
-_Last updated: October 16, 2025_
+<br/>
+Last updated: October 16, 2025

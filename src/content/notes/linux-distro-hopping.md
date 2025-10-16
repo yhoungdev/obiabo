@@ -14,4 +14,5 @@ _A collection of my distro-hopping escapades – some love it, some… not so mu
 Welcome to my chaotic world of Linux distribution experimentation. Over the years, I've tried countless distros, each with their own personality and quirks.
 
 
-_Last updated: October 16, 2025_
+<br/>
+Last updated: October 16, 2025

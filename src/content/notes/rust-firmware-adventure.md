@@ -67,4 +67,5 @@ Writing firmware is like speaking directly to the hardware – no abstractions, 
 
 --- -->
 
-_Last updated: October 16, 2025_
+<br/>
+Last updated: October 16, 2025
