@@ -1,14 +1,23 @@
-I’m just a guy who sits in front of a [*mini-LED* screen](https://en.wikipedia.org/wiki/Mini-LED) nearly every day, staring at a dark theme and filling blank spaces with combinations of letters (`A–Z`, `a–z`) and numbers, with a strong interest in [**Linux**](https://en.wikipedia.org/wiki/Linux), [open-source software](https://en.wikipedia.org/wiki/Open-source_software), and [low-level systems](https://en.wikipedia.org/wiki/Low-level_programming_language). Outside of all that, I play **drums** 🥁 and occasionally dive into random deep reads 📚.
+I'm a software engineer focused on backend systems, open-source development, and blockchain technology. I work primarily with Linux systems and have experience across multiple programming languages.
 
 <br/>
 
-Talking Linux? My main distro was [`Ubuntu`](https://en.wikipedia.org/wiki/Ubuntu), but I’ve hopped through [*Kali Linux*](https://en.wikipedia.org/wiki/Kali_Linux), [**Parrot OS**](https://en.wikipedia.org/wiki/Parrot_OS), [`Lubuntu`](https://en.wikipedia.org/wiki/Lubuntu), and [`Tails`](https://en.wikipedia.org/wiki/Tails_(operating_system)) (yes, I’m a hopper 🧭). And sure, I say I’m “trying” [**Arch Linux**](https://en.wikipedia.org/wiki/Arch_Linux), but let’s be real, I’m typing this on [macOS](https://en.wikipedia.org/wiki/MacOS) (its battery 🔋 life won my heart) 😅. Lately, I’ve been exploring [`Rust`](https://en.wikipedia.org/wiki/Rust_(programming_language)) 🦀 and once ran a [*Bitcoin*](https://en.wikipedia.org/wiki/Bitcoin) node on a [Raspberry Pi 4](https://en.wikipedia.org/wiki/Raspberry_Pi), just for the thrill of it (didn't turn out great tho).
+My technical background includes working with Ubuntu, Kali Linux, Parrot OS, and Arch Linux, though I currently develop on macOS. I'm actively learning Rust and have hands-on experience with blockchain infrastructure, including running Bitcoin nodes and building on Solana.
 
 <br/>
 
-I was among the [*Solana Summer Fellows '24*](https://solana.com/grants#summer-camp), I’ve built on the [Solana blockchain](https://en.wikipedia.org/wiki/Solana_(blockchain_platform)) and remain deeply interested in all things decentralized.
+I was a Solana Summer Fellow '24 and continue to work on decentralized applications and blockchain systems.
 
 <br/>
 
-Recently,  I worked on the <a class='text-red-600  font-semibold' href="https://docs.useplunk.com/guides/rust-sdk">Plunk Rust SDK</a> 🦀, which is now the official community SDK featured in the Plunk documentation. I'm also building an unofficial SDK for <a class='text-red-600 font-semibold' href="https://polar.sh/">Polar.sh</a> ❄️, both aimed at improving the developer experience within the open-source ecosystem.
+Recent projects include the <a class='text-default font-semibold' href="https://docs.useplunk.com/guides/rust-sdk">Plunk Rust SDK</a>, now the official community SDK, and an unofficial SDK for <a class='text-default font-semibold' href="https://polar.sh/">Polar.sh</a>.
+
+<br/>
+
+Currently, I'm building <a class="text-default font-semibold" href="https://www.ourpocket.xyz/">OurPocket</a> - an infrastructure API that enables B2B platforms to manage wallets across multiple payment and crypto providers through a single, secure integration.
+
+<br/>
+
+Outside of development, I play drums and enjoy diving into technical reads. Over time, I’ve curated an awesome reading list from some amazing corners of the web, think of it as a gold mine of knowledge you can explore <a class="text-default font-semibold underline" href="https://sudowhoami.notion.site/Some-Good-Reads-in-no-particular-order-25a13d4f6e9a80c88637e0b72955c0d8?pvs=74"> here </a>
+. I’ve also got a few titles lined up on my personal reading list, including Mastering Bitcoin, <a  href="https://en.wikipedia.org/wiki/The_Garden_of_Forking_Paths"> The Garden of Forking Paths  </a> , <a href="https://en.wikipedia.org/wiki/Many-worlds_interpretation" class="text-default">Many worlds interpretation</a>, <a class="text-default" href="https://craftinginterpreters.com/">Crafting Interpreters</a>, and <a class="text-default" href="https://archive.org/details/cu31924028741175"> The Dual Mandate in British Tropical Africa (1922) by Lord Frederick Lugard </a>.
 

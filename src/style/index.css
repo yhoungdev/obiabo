@@ -7,6 +7,13 @@
   line-height: 2em;
 }
 
+
+.custom-link {
+  font-weight: 600 !important;
+  color: oklch(57.7% 0.245 27.325) !important;
+  text-decoration: underline !important;
+}
+
 html {
   scroll-behavior: smooth !important;
 }
