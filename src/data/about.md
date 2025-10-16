@@ -11,3 +11,4 @@ I was among the [*Solana Summer Fellows '24*](https://solana.com/grants#summer-c
 <br/>
 
 Recently,  I worked on the <a class='text-red-600  font-semibold' href="https://docs.useplunk.com/guides/rust-sdk">Plunk Rust SDK</a> 🦀, which is now the official community SDK featured in the Plunk documentation. I'm also building an unofficial SDK for <a class='text-red-600 font-semibold' href="https://polar.sh/">Polar.sh</a> ❄️, both aimed at improving the developer experience within the open-source ecosystem.
+

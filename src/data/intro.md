@@ -7,4 +7,12 @@ Recently, I worked on the <a class='text-default' href="https://crates.io/crates
 
 <br/>
 
+
+And also, I am currently building <a class='text-default' href="https://www.ourpocket.xyz/">OurPocket</a>
+
+<br/>
+
+
 *Currently open to new opportunities 💼 and collaborations. If you'd like to connect or work together, feel free to <a href="https://x.com/obiabo_immanuel" class='text-default'>reach out</a>.*
+
+
