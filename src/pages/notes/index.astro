@@ -1,24 +1,68 @@
 ---
+export const prerender = false; 
+
+import { getCollection } from "astro:content";
 import Header from '../../components/header/index.astro'
 import '../../style/index.css'
-import { Content as NoteContent } from '../../data/notes/intro.md';
+
+const notes = await getCollection("notes");
+
+
+const sortedNotes = notes.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
+<Header title="🗒️ Notes" />
+<main class="max-w-4xl mx-auto px-4 py-8">
+  <header class="mb-8">
+    <h1 class="text-xl font-bold mb-4">
+      <span class="text-red-600">Welcome 👋 to my corner of the internet!</span>
+    </h1>
+    <p class="text-lg italic mb-6">
+      This is where I share notes, thoughts, things I've tried and want to try, and personal experiences and learnings.
+    </p>
+    <p class="mb-8">
+      Feel free to explore and learn something along the way.
+    </p>
+  </header>
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🗒️ Notes</title>
-</head>
-<body>
-    <Header/>
-
-    <div class="max-w-2xl mx-auto px-4 py-8 font-serif">
+  <section class="mb-12">
+    <h2 class="text-lg font-semibold mb-6">Here are my notes – dive in and explore:</h2>
     
-        <section id="note" class="" >
-            <NoteContent/>    
-        </section>
+    <div class="space-y-6">
+      {sortedNotes.map((note) => (
+        <div class="mt-6">
+          <div class="p-6">
+            <h3 class="text-lg font-medium mb-3">
+              <a href={`/notes/${note.slug}`} class="text-red-600 hover:underline">
+                {note.data.title}
+              </a>
+            </h3>
+            {note.data.description && (
+              <p class="mb-4 italic">{note.data.description}</p>
+            )}
+            <p class="text-sm text-gray-600">
+              Published on {note.data.pubDate.toLocaleDateString("en-US", { dateStyle: "long" })}
+            </p>
+          </div>
+        </div>
+      ))}
     </div>
-</body>
-</html>
+  </section>
+
+  <section class="mt-12 pt-8 border-t border-gray-200">
+    <div class="mt-6">
+      <div class="p-6">
+        <h3 class="text-lg font-medium mb-3">
+          <a href="/open-source-contributions" class="text-red-600 hover:underline">
+            Open Source Contributions
+          </a>
+        </h3>
+        <p class="mb-4 italic">My journey of contributing to various open source projects across different ecosystems</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="mt-12 pt-8 border-t border-gray-200 text-center text-sm">
+    <p>Stay cheesed up for this, drink some cup of water 🚰 and do the calms</p>
+  </footer>
+</main>
