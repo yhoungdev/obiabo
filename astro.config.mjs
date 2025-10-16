@@ -6,15 +6,17 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 
 import mdx from "@astrojs/mdx";
+import vercel from "@astrojs/vercel/serverless";
 
-import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
   integrations: [tailwind(), react(), mdx()],
 
-  adapter: node({
-    mode: "standalone",
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
   }),
 });
