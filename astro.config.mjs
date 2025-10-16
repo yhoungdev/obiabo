@@ -13,7 +13,7 @@ import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server', // Enable server-side rendering by default
+  output: 'server',
   integrations: [tailwind(), react(), mdx(), db()],
 
   adapter: node({

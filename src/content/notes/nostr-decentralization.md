@@ -18,13 +18,15 @@ Nostr (Notes and Other Stuff Transmitted by Relays) is a decentralized protocol 
 ### How it Works
 [Content coming soon...]
 
+<!-- 
 ### Key Components
 - **Relays**: Servers that store and forward messages
 - **Clients**: Applications that interact with relays
 - **Keys**: Cryptographic identities for users
 
 ## Why Bitcoiners Love It
-
+[Content coming soon...] -->
+<!-- 
 ### Decentralization Claims
 [Content coming soon...]
 
@@ -41,8 +43,8 @@ Nostr (Notes and Other Stuff Transmitted by Relays) is a decentralized protocol 
 
 ## Is it Really Decentralized?
 
-[Content coming soon...]
+[Content coming soon...] -->
 
----
+
 
 _Last updated: October 16, 2025_

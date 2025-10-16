@@ -20,7 +20,7 @@ Up to this blessed day, I'm still afraid of elevators. It's where gravity and my
 
 ### Why I Don't Trust Machines
 [Content coming soon...]
-
+<!-- 
 ## But I Still Code
 
 ### The Irony
@@ -44,6 +44,6 @@ Up to this blessed day, I'm still afraid of elevators. It's where gravity and my
 
 [Content coming soon...]
 
----
+--- -->
 
 _Last updated: October 16, 2025_

@@ -17,7 +17,7 @@ This is my journey of attempting to run a Bitcoin node and personal server on a 
 
 ### Hardware
 - Raspberry Pi 4 (4GB RAM)
-- 1TB External Hard Drive
+- 500GB External Hard Drive
 - MicroSD Card (64GB)
 - Reliable power supply
 
@@ -28,7 +28,7 @@ This is my journey of attempting to run a Bitcoin node and personal server on a 
 
 ## The Journey
 
-### Initial Setup
+<!-- ### Initial Setup
 [Content coming soon...]
 
 ### Challenges Faced
@@ -38,11 +38,8 @@ This is my journey of attempting to run a Bitcoin node and personal server on a 
 [Content coming soon...]
 
 ### Lessons Learned
-[Content coming soon...]
+[Content coming soon...] -->
 
-## Current Status
-[Content coming soon...]
 
----
 
-_Last updated: October 16, 2025_
+Last updated: October 16, 2025

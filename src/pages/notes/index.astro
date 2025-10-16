@@ -7,15 +7,34 @@ import '../../style/index.css'
 
 const notes = await getCollection("notes");
 
-
 const sortedNotes = notes.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+Astro.response.headers.set('Content-Type', 'text/html; charset=utf-8');
 ---
 
-<Header title="🗒️ Notes" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal notes and thoughts on technology, programming, and life" />
+  <meta name="author" content="Obiabo" />
+  <meta property="og:title" content="Notes" />
+  <meta property="og:description" content="Personal notes and thoughts on technology, programming, and life" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Notes" />
+  <meta name="twitter:description" content="Personal notes and thoughts on technology, programming, and life" />
+  <title>Notes</title>
+  <link rel="stylesheet" href="/src/style/index.css" />
+</head>
+<body>
+
+<Header title="Notes" />
 <main class="max-w-4xl mx-auto px-4 py-8">
   <header class="mb-8">
     <h1 class="text-xl font-bold mb-4">
-      <span class="text-red-600">Welcome 👋 to my corner of the internet!</span>
+      <span class="text-default">Welcome to my corner of the internet!</span>
     </h1>
     <p class="text-lg italic mb-6">
       This is where I share notes, thoughts, things I've tried and want to try, and personal experiences and learnings.
@@ -27,20 +46,20 @@ const sortedNotes = notes.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDa
 
   <section class="mb-12">
     <h2 class="text-lg font-semibold mb-6">Here are my notes – dive in and explore:</h2>
-    
-    <div class="space-y-6">
+     
+    <div class="space-y-6 ">
       {sortedNotes.map((note) => (
-        <div class="mt-6">
-          <div class="p-6">
-            <h3 class="text-lg font-medium mb-3">
-              <a href={`/notes/${note.slug}`} class="text-red-600 hover:underline">
+        <div class="mt-4">
+          <div class="">
+            <h3 class="text-lg italic font-medium mb-3">
+              <a href={`/notes/${note.slug}`} class="text-default hover:underline">
                 {note.data.title}
               </a>
             </h3>
             {note.data.description && (
               <p class="mb-4 italic">{note.data.description}</p>
             )}
-            <p class="text-sm text-gray-600">
+            <p class="text-sm italic">
               Published on {note.data.pubDate.toLocaleDateString("en-US", { dateStyle: "long" })}
             </p>
           </div>
@@ -49,20 +68,11 @@ const sortedNotes = notes.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDa
     </div>
   </section>
 
-  <section class="mt-12 pt-8 border-t border-gray-200">
-    <div class="mt-6">
-      <div class="p-6">
-        <h3 class="text-lg font-medium mb-3">
-          <a href="/open-source-contributions" class="text-red-600 hover:underline">
-            Open Source Contributions
-          </a>
-        </h3>
-        <p class="mb-4 italic">My journey of contributing to various open source projects across different ecosystems</p>
-      </div>
-    </div>
-  </section>
 
-  <footer class="mt-12 pt-8 border-t border-gray-200 text-center text-sm">
-    <p>Stay cheesed up for this, drink some cup of water 🚰 and do the calms</p>
+  <footer class="mt-12 pt-8  text-center text-sm">
+    <p class="text-gray-400">Stay cheesed up for this, drink some cup of water and do the calms</p>
   </footer>
 </main>
+
+</body>
+</html>

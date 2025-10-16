@@ -17,7 +17,7 @@ Writing firmware is like speaking directly to the hardware – no abstractions, 
 
 ### Memory Safety Without Garbage Collection
 [Content coming soon...]
-
+<!-- 
 ### Zero-Cost Abstractions
 [Content coming soon...]
 
@@ -65,6 +65,6 @@ Writing firmware is like speaking directly to the hardware – no abstractions, 
 ### Next Steps
 [Content coming soon...]
 
----
+--- -->
 
 _Last updated: October 16, 2025_
