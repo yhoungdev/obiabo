@@ -1,8 +1,8 @@
-I'm a software engineer focused on backend systems, open-source development, and blockchain technology. I work primarily with Linux systems and have experience across multiple programming languages.
+I’m a software engineer passionate about Linux, open-source ecosystems, and systems engineering. I build software ranging from developer tools to real-world applications and enjoy exploring systems that run close to the metal.
 
 <br/>
 
-My technical background includes working with Ubuntu, Kali Linux, Parrot OS, and Arch Linux, though I currently develop on macOS. I'm actively learning Rust and have hands-on experience with blockchain infrastructure, including running Bitcoin nodes and building on Solana.
+I have solid experience with Linux and its various distributions, including Ubuntu, Kali Linux, Tails OS, Parrot OS, and Kubuntu. A few years ago, I experimented with running a Bitcoin node and personal server on a Raspberry Pi 4, but it didn’t go as planned due to hardware limitations, something I’d love to revisit in the future with better hardware.
 
 <br/>
 
