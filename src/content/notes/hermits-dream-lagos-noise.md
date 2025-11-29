@@ -10,7 +10,7 @@ It’s 18:58 on Friday, November 28, 2025. I’m sitting at an eatery in Ajah (L
 
 <br/>
 
-It’s been a tough year for me. Today I watched Ozark on Netflix, slept, woke up, and still feel like nothing matters. I scrolled Twitter, jumped on Bluesky, Lobste.rs, and Bear Blog, talked about DNA editing and DNA as storage, and still nothing entices me. The Sheik of light has kept the light off for the past seven hours, and I’m sick and tired of it. I need freedom from the noise. I want a cool space to read. I want my own space to dive back into Linux and distro hubs like I did as a teenager. I’ll be twenty something again next month, December, and I can hardly believe the age I’m becoming.
+It’s been a tough year for me. Today I watched  <a target="_blank" href="https://www.imdb.com/title/tt5071412/" style="color:#f94e19;"> The Ozarks </a> on Netflix, slept, woke up, and still feel like nothing matters. I scrolled Twitter, jumped on Bluesky, <a target="_blank" href="https://lobste.rs/" style="color:#f94e19;">  Lobste.rs </a>  , and <a target="_blank" href="https://bearblog.dev/" style="color:#f94e19;"> Bear Blog </a>, talked about DNA editing and DNA as storage, and still nothing entices me. The Sheik of light has kept the light off for the past seven hours, and I’m sick and tired of it. I need freedom from the noise. I want a cool space to read. I want my own space to dive back into Linux and distro hubs like I did as a teenager. I’ll be twenty something again next month, December, and I can hardly believe the age I’m becoming.
 
 
 </br>
@@ -22,13 +22,13 @@ I just want to read more, research Linux, systems, blockchains, the universe, hi
 
 <br>
 
-My brain is running a race condition. I’ve never been so indecisive. I haven’t seen my lovely sister in a long while, and I’d love to see her. It’s 19:07 PM, and my account balance isn’t encouraging at all. I have more GitHub tiles than someone who works at GitHub, and yet my finances aren’t worth writing about. I don’t even have a girlfriend, because I need to stop this race condition first. I’ve seen many beautiful women on earth. I rarely go out, but each time I do, I see beauty. Truly, God is the greatest artist, the creator of the universe, whose work is a masterpiece beyond Shakespeare, Picasso, Dalí, Michelangelo, and others.
+My brain is running a race condition. I’ve never been so indecisive. I haven’t seen my lovely sister in a long while, and I’d love to see her. It’s 19:07 PM, and my account balance isn’t encouraging at all. I have more <a target="_blank" href="https://github.com/yhoungdev" style="color:#f94e19;"> GitHub </a> tiles than someone who works at GitHub, and yet my finances aren’t worth writing about. I don’t even have a girlfriend, because I need to stop this race condition first. I’ve seen many beautiful women on earth. I rarely go out, but each time I do, I see beauty. Truly, God is the greatest artist, the creator of the universe, whose work is a masterpiece beyond Shakespeare, Picasso, Dalí, Michelangelo, and others.
 
 <br>
 
 I have 15k+ followers on LinkedIn, yet I don’t use the app enough. That’s 15k on LinkedIn and 1.12k followers on Twitter. Meanwhile, in real life, I don’t have 1% of that number as friends. I don’t know if I’m an introvert. I haven’t seen my cat in a long while. I’m sorry, June. I failed you, and I blame myself each day for that.
 
-I’m currently listening to “Goodness of God” by Bethel Worship and Jen Johnson. One thing I’ve missed is drumming. I need to go back to it, but I need stability first. They say money doesn’t buy happiness, but it buys a glimpse. It gives you confidence. It boosts it.
+I’m currently listening to <a target="_blank" style="color:#f94e19;" href="https://open.spotify.com/track/0HE3SH6fvxdRIUq54HjVq0?si=20104938a7754be6">“Goodness of God” </a> by <a target="_blank" href="https://open.spotify.com/artist/26T4yOaOoFJvUvxR87Y9HO?si=L0qm5nbzTWC-hOOYv8ZM9w" style="color:#f94e19;">Bethel Worship </a> and  <a target="_blank" href="https://open.spotify.com/artist/0cuW2lF0YWb9VUyHOnvnsO?si=cMjYnMypQi66mWYyUcTy-g" style="color:#f94e19;">Jen Johnson  </a>. One thing I’ve missed is drumming. I need to go back to it, but I need stability first. They say money doesn’t buy happiness, but it buys a glimpse. It gives you confidence. It boosts it.
 
 I hate it when people call me. The only voice I love to hear when I pick up is my lovely sister’s. Dear Janet, I promise you’ll read this one day.
 
@@ -42,13 +42,13 @@ I have a free form hairstyle and sometimes it makes me look like a retarded Rata
 
 I get overexcited when I take cappuccino or Latte, so I take them sometimes but not always.
 
-I’ve done many things for education and fun. I tried running a Bitcoin node on a beat up Raspberry Pi 4 running Umbrel OS, with a 500GB HDD slow to write and a crappy Glo network. In my teenage years, I used to mod .jar apps. Some years back, I visited the dark web to solve CAPTCHAs. I’ve been a fan of the Onion routing network for a long time. I once tried running a relay. I also visited the dark web with a dedicated Linux distro called Tails OS.
+I’ve done many things for education and fun. I tried running a Bitcoin node on a beat up Raspberry Pi 4 running Umbrel OS, with a 500GB HDD slow to write and a crappy Glo network. In my teenage years, I used to mod .jar apps. Some years back, I visited the dark web to solve CAPTCHAs. I’ve been a fan of the Onion routing network for a long time. I once tried running a relay. I also visited the dark web with a dedicated Linux distro called <a target="_blank" href="https://tails.net/" style="color:#f94e19;">Tails OS</a>.
 
 2025 has been one of the craziest years of my two decades plus of living on this beautiful earth God created, but thank God Almighty for life, family, people around me, and open source.
 
 I live in a third world country where nothing seems to matter to the indecisive imbeciles we have as government, whose morals are banged up and who only prioritize misplaced priorities.
 
-I am currently listening to Dylan Owen while typing this part. I can talk about many things like I am a polymath. I love to learn and read, and I am thirsty for knowledge like a monk. Two days ago, I tried joining a book club that a pretty lady invited me to at the café after some hours of taking espresso. There are many beautiful minds there, but I’m not sure I’ll join them next time. Let’s see how it goes.
+I am currently listening to <a target="_blank" href="https://open.spotify.com/artist/3tBtdC4EFE4bNqkt7JP0Co?si=JmrgoE93QGa2OKSmrCejiw" style="color:#f94e19;">  Dylan Owen </a> while typing this part. I can talk about many things like I am a polymath. I love to learn and read, and I am thirsty for knowledge like a monk. Two days ago, I tried joining a book club that a pretty lady invited me to at the café after some hours of taking espresso. There are many beautiful minds there, but I’m not sure I’ll join them next time. Let’s see how it goes.
 
 You want to talk We can talk about Linux, operating systems, and open source. Please don’t call me for equity without monetary compensation at the moment, because it would be a total debacle for my financial status right now.
 
