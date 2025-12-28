@@ -1,15 +1,11 @@
 ---
 export const prerender = false; 
 
-import { getCollection } from "astro:content";
-import Header from '../../components/header/index.astro'
-import '../../style/index.css'
+import Header from '../../components/header/index.astro';
+import '../../style/index.css';
+import { getSanityPosts } from '../../utils/getSanityPosts';
 
-const notes = await getCollection("notes");
-
-const sortedNotes = notes.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-Astro.response.headers.set('Content-Type', 'text/html; charset=utf-8');
+const posts = await getSanityPosts();
 ---
 
 <!DOCTYPE html>
@@ -46,19 +42,19 @@ Astro.response.headers.set('Content-Type', 'text/html; charset=utf-8');
 
   <section class="mb-12">
     <div class="space-y-6 ">
-      {sortedNotes.map((note) => (
+      {posts.map((post) => (
         <div class="mt-4">
-          <div class="">
+          <div>
             <h3 class="text-md italic font-medium mb-3">
-              <a href={`/notes/${note.slug}`} class="text-default hover:underline">
-                {note.data.title}
+              <a href={`/notes/${post.slug.current}`} class="text-default hover:underline">
+                {post.title}
               </a>
             </h3>
-            {note.data.description && (
-              <p class="mb-4 text-sm italic">{note.data.description}</p>
+            {post.description && (
+              <p class="mb-4 text-sm italic">{post.description}</p>
             )}
             <p class="text-sm italic">
-              Published on {note.data.pubDate.toLocaleDateString("en-US", { dateStyle: "long" })}
+              Published on {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString("en-US", { dateStyle: "long" }) : 'Unknown'}
             </p>
           </div>
         </div>
