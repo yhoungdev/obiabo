@@ -19,6 +19,7 @@
     "@astrojs/vercel": "^8.2.10",
     "@sanity/astro": "^3.2.11",
     "@sanity/client": "^7.13.2",
+    "@sanity/vision": "^5.1.0",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "astro": "^5.10.0",
