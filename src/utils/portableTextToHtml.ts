@@ -1,9 +1,9 @@
-// Minimal Portable Text to HTML renderer for Astro (headings, paragraphs, italics)
-export function portableTextToHtml(blocks) {
+
+export function portableTextToHtml(blocks: any[]): string {
   if (!Array.isArray(blocks)) return '';
   return blocks.map(block => {
     if (block._type !== 'block' || !block.children) return '';
-    const text = block.children.map(child => {
+    const text = block.children.map((child: any) => {
       let t = child.text;
       if (child.marks && child.marks.includes('em')) t = `<em>${t}</em>`;
       if (child.marks && child.marks.includes('strong')) t = `<strong>${t}</strong>`;
