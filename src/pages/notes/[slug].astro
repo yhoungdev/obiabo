@@ -39,7 +39,7 @@ const { title, description: desc, tags, publishedAt, body } = post;
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content={publishedAt ? new Date(publishedAt).toISOString() : ''} />
   <!-- @ts-ignore -->
-  {tags && tags.map(tag => <meta property="article:tag" content={tag} />)}
+  {tags && tags.map((tag: string) => <meta property="article:tag" content={tag} />)}
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={desc || "Personal notes and thoughts"} />

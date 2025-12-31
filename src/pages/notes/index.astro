@@ -42,7 +42,7 @@ const posts = await getSanityPosts();
 
   <section class="mb-12">
     <div class="space-y-6 ">
-      {posts.map((post) => (
+      {posts.map((post: {slug: {current: string}, title: string, description: string, publishedAt: string}) => (
         <div class="mt-4">
           <div>
             <h3 class="text-md italic font-medium mb-3">
