@@ -56,9 +56,25 @@ export default defineType({
       type: 'datetime',
     }),
     defineField({
+      name: 'firstPublishedAt',
+      title: 'First Published At',
+      type: 'datetime',
+      description: 'Automatically set on first publication. Never overwrites.',
+      readOnly: true,
+    }),
+    defineField({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+    }),
+    defineField({
+      name: 'markdown',
+      title: 'Content (Markdown)',
+      type: 'text',
+      options: {
+        rows: 30,
+      },
+      description: 'Write your content in GitHub Flavored Markdown format',
     }),
   ],
 
