@@ -1,4 +1,3 @@
-/* Portable Text Renderer - Complete Styling */
 
 .portable-text {
   font-family: inherit;
@@ -6,7 +5,7 @@
   line-height: 1.8;
 }
 
-/* ============ TEXT FORMATTING ============ */
+
 
 .portable-strong,
 strong {

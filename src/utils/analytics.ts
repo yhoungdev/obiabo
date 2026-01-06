@@ -4,8 +4,6 @@ declare global {
     }
   }
   
-  declare function gtag(command: string, ...params: any[]): void;
-  
   export function initializeAnalytics() {
     if (typeof window !== 'undefined') {
       window.dataLayer = window.dataLayer || [];

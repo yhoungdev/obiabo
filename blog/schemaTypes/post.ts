@@ -71,9 +71,6 @@ export default defineType({
       name: 'markdown',
       title: 'Content (Markdown)',
       type: 'text',
-      options: {
-        rows: 30,
-      },
       description: 'Write your content in GitHub Flavored Markdown format',
     }),
   ],

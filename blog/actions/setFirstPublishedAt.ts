@@ -1,4 +1,4 @@
-import {DocumentActionDescription} from 'sanity'
+import type {DocumentActionDescription} from 'sanity'
 
 export const setFirstPublishedAtAction = (
   prev: DocumentActionDescription[],

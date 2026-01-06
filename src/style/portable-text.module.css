@@ -1,0 +1,414 @@
+.portableText {
+  font-family: inherit;
+  color: inherit;
+  line-height: 1.8;
+}
+
+/* Text formatting */
+.portableText .portable-strong,
+.portableText strong {
+  font-weight: 700;
+  color: inherit;
+}
+
+.portableText .portable-em,
+.portableText em {
+  font-style: italic;
+  color: inherit;
+}
+
+.portableText .portable-code,
+.portableText code {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95em;
+  color: #a8d6ff;
+}
+
+.portableText .portable-underline,
+.portableText u {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+.portableText .portable-strikethrough,
+.portableText s {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+/* Headings */
+.portableText .portable-h1,
+.portableText h1 {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin: 1.5em 0 0.5em 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.portableText .portable-h2,
+.portableText h2 {
+  font-size: 2em;
+  font-weight: 700;
+  margin: 1.5em 0 0.5em 0;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #e8e8e8;
+}
+
+.portableText .portable-h3,
+.portableText h3 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 1.25em 0 0.5em 0;
+  line-height: 1.3;
+  color: #d9d9d9;
+}
+
+.portableText .portable-h4,
+.portableText h4 {
+  font-size: 1.25em;
+  font-weight: 700;
+  margin: 1em 0 0.5em 0;
+  line-height: 1.4;
+  color: #c8ccda;
+}
+
+/* Paragraphs */
+.portableText p {
+  margin: 1.2em 0;
+  line-height: 1.8;
+  color: #c8ccda;
+}
+
+.portableText p:first-child {
+  margin-top: 0;
+}
+
+/* Lists */
+.portableText ul {
+  list-style: disc;
+  margin: 1.5em 0;
+  padding-left: 2.5em;
+}
+
+.portableText ol {
+  list-style: decimal;
+  margin: 1.5em 0;
+  padding-left: 2.5em;
+}
+
+.portableText li {
+  margin: 0.5em 0;
+  line-height: 1.8;
+  color: #c8ccda;
+}
+
+.portableText li > p {
+  margin: 0.5em 0;
+}
+
+/* Blockquotes */
+.portableText .portable-blockquote,
+.portableText blockquote {
+  margin: 1.5em 0;
+  padding: 1em 0 1em 1.5em;
+  border-left: 4px solid #6a7ca8;
+  font-style: italic;
+  color: #a0a5b8;
+  background-color: rgba(106, 124, 168, 0.05);
+}
+
+.portableText blockquote p {
+  margin: 0.5em 0;
+  color: inherit;
+}
+
+/* Code blocks */
+.portableText .code-block {
+  margin: 1.5em 0;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #1e1e1e;
+  border: 1px solid #3e3e42;
+}
+
+.portableText .language-badge {
+  background-color: #2d2d30;
+  color: #ce9178;
+  padding: 0.5em 1em;
+  font-size: 0.85em;
+  font-weight: 600;
+  border-bottom: 1px solid #3e3e42;
+}
+
+.portableText pre {
+  margin: 0;
+  padding: 1.5em;
+  overflow-x: auto;
+  background-color: #1e1e1e;
+}
+
+.portableText pre code {
+  background-color: transparent;
+  padding: 0;
+  color: #d4d4d4;
+  font-size: 0.95em;
+  line-height: 1.6;
+  font-family: 'Courier New', monospace;
+}
+
+/* Images */
+.portableText .portable-image,
+.portableText figure {
+  margin: 2em 0;
+  text-align: center;
+}
+
+.portableText figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.portableText figcaption {
+  margin-top: 0.8em;
+  font-size: 0.9em;
+  color: #888;
+  font-style: italic;
+}
+
+/* Callouts */
+.portableText .callout {
+  margin: 1.5em 0;
+  padding: 1.25em 1.5em;
+  border-radius: 6px;
+  border-left: 4px solid;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.portableText .callout-title {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+.portableText .callout-message {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.portableText .callout-info {
+  background-color: rgba(33, 150, 243, 0.08);
+  border-color: #2196f3;
+  color: #64b5f6;
+}
+
+.portableText .callout-info .callout-title {
+  color: #2196f3;
+}
+
+.portableText .callout-warning {
+  background-color: rgba(255, 193, 7, 0.08);
+  border-color: #ffc107;
+  color: #ffd54f;
+}
+
+.portableText .callout-warning .callout-title {
+  color: #ffc107;
+}
+
+.portableText .callout-success {
+  background-color: rgba(76, 175, 80, 0.08);
+  border-color: #4caf50;
+  color: #81c784;
+}
+
+.portableText .callout-success .callout-title {
+  color: #4caf50;
+}
+
+.portableText .callout-error {
+  background-color: rgba(244, 67, 54, 0.08);
+  border-color: #f44336;
+  color: #ef5350;
+}
+
+.portableText .callout-error .callout-title {
+  color: #f44336;
+}
+
+/* Dividers */
+.portableText .portable-divider,
+.portableText hr {
+  margin: 2.5em 0;
+  border: none;
+  border-top: 2px solid #3a3f4d;
+  opacity: 0.5;
+}
+
+/* Video embeds */
+.portableText .portable-video {
+  margin: 2em 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.portableText .portable-video iframe {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.portableText .portable-video figcaption {
+  margin-top: 1em;
+  text-align: center;
+}
+
+/* Quotes */
+.portableText .portable-quote {
+  margin: 1.5em 0;
+  padding: 1.5em;
+  background-color: rgba(106, 124, 168, 0.08);
+  border-left: 4px solid #6a7ca8;
+  border-radius: 4px;
+  font-style: italic;
+  color: #a0a5b8;
+}
+
+.portableText .quote-text {
+  margin: 0;
+}
+
+.portableText .quote-author {
+  margin-top: 0.8em;
+  font-style: normal;
+  color: #888;
+  font-size: 0.95em;
+  font-weight: 600;
+}
+
+/* Highlights */
+.portableText .highlight {
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.portableText .highlight-yellow {
+  background-color: #ffeb3b;
+  color: #000;
+}
+
+.portableText .highlight-green {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.portableText .highlight-blue {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+.portableText .highlight-red {
+  background-color: #f44336;
+  color: #fff;
+}
+
+/* Preview blocks */
+.portableText .preview-block {
+  margin: 2em 0;
+  padding: 1.5em;
+  border-radius: 6px;
+  border: 1px solid #3a3f4d;
+}
+
+.portableText .preview-title {
+  margin: 0 0 0.5em 0;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #fff;
+}
+
+.portableText .preview-description {
+  margin: 0.5em 0 1em 0;
+  color: #a0a5b8;
+  font-size: 0.95em;
+}
+
+.portableText .preview-content {
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+.portableText .preview-light {
+  background-color: rgba(255, 255, 255, 0.02);
+  color: #c8ccda;
+}
+
+.portableText .preview-light .preview-content {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #d9d9d9;
+}
+
+.portableText .preview-dark {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.portableText .preview-dark .preview-content {
+  background-color: #0a0e1a;
+  border: 1px solid #1a1f2e;
+  color: #e1e1e1;
+}
+
+.portableText .preview-code {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  border: 1px solid #3e3e42;
+}
+
+.portableText .preview-code .preview-content {
+  background-color: #252526;
+  color: #ce9178;
+  border: 1px solid #3e3e42;
+}
+
+/* Links */
+.portableText .portable-link,
+.portableText a {
+  color: #64b5f6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  border-bottom: 1px solid rgba(100, 181, 246, 0.3);
+}
+
+.portableText .portable-link:hover,
+.portableText a:hover {
+  color: #90caf9;
+  border-bottom-color: rgba(144, 202, 249, 0.5);
+}
+
+.portableText .portable-internal-link {
+  color: #7c91d6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  border-bottom: 1px solid rgba(124, 145, 214, 0.3);
+}
+
+.portableText .portable-internal-link:hover {
+  color: #9bb3e0;
+  border-bottom-color: rgba(155, 179, 224, 0.5);
+}
