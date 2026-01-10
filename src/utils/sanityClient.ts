@@ -6,3 +6,6 @@ export const sanity = createClient({
   apiVersion: '2023-10-01', // Use a recent date for the API version
   useCdn: true, // `false` if you want to ensure fresh data
 });
+
+// Export as sanityClient for API routes
+export const sanityClient = sanity;
