@@ -127,6 +127,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     
     sendTelegramNotification({
+      commentId,
       postId,
       name: sanitizedName,
       content: sanitizedContent,
