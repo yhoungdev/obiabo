@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
-import { sanityClient } from '../../utils/sanityClient';
+import { db, eq, and, reactions } from 'astro:db';
 
-// Helper to get/create session ID
+
 function getSessionId(request: Request): string {
   const cookies = request.headers.get('cookie') || '';
   const sessionMatch = cookies.match(/sessionId=([^;]+)/);
@@ -10,7 +10,7 @@ function getSessionId(request: Request): string {
     return sessionMatch[1];
   }
   
-  // Generate new session ID
+  
   return `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 }
 
@@ -26,19 +26,13 @@ export const GET: APIRoute = async ({ request, url }) => {
 
   try {
     const sessionId = getSessionId(request);
-
-    // Get all reactions for this post
-    const query = `*[_type == "reaction" && post._ref == $postId] {
-      emoji,
-      sessionId
-    }`;
     
-    const reactions = await sanityClient.fetch(query, { postId });
-
-    // Count reactions by emoji
+    const allReactions = await db.select().from(reactions);
+    const filtered = allReactions.filter(r => r.postId === postId);
+    
     const reactionCounts: Record<string, { emoji: string; count: number; hasReacted: boolean }> = {};
     
-    reactions.forEach((reaction: { emoji: string; sessionId: string }) => {
+    filtered.forEach((reaction: any) => {
       if (!reactionCounts[reaction.emoji]) {
         reactionCounts[reaction.emoji] = {
           emoji: reaction.emoji,
@@ -58,8 +52,9 @@ export const GET: APIRoute = async ({ request, url }) => {
       headers: { 'Content-Type': 'application/json' },
     });
   } catch (error) {
-    console.error('Error fetching reactions:', error);
-    return new Response(JSON.stringify({ error: 'Failed to fetch reactions' }), {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error('Error fetching reactions:', errorMessage, error);
+    return new Response(JSON.stringify({ error: 'Failed to fetch reactions', details: errorMessage }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
@@ -68,8 +63,10 @@ export const GET: APIRoute = async ({ request, url }) => {
 
 export const POST: APIRoute = async ({ request }) => {
   try {
+    console.log('POST /api/reactions - Request received');
     const body = await request.json();
     const { postId, emoji, remove } = body;
+    console.log('POST /api/reactions - Body:', { postId, emoji, remove });
 
     if (!postId || !emoji) {
       return new Response(JSON.stringify({ error: 'Post ID and emoji required' }), {
@@ -79,36 +76,55 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     const sessionId = getSessionId(request);
+    console.log('POST /api/reactions - Session ID:', sessionId);
 
     if (remove) {
-      // Remove reaction
-      const query = `*[_type == "reaction" && post._ref == $postId && emoji == $emoji && sessionId == $sessionId][0]._id`;
-      const reactionId = await sanityClient.fetch(query, { postId, emoji, sessionId });
       
-      if (reactionId) {
-        await sanityClient.delete(reactionId);
+      console.log('POST /api/reactions - Removing reaction');
+      const allData = await db.select().from(reactions);
+      const existing = allData.filter(r => 
+        r.postId === postId && 
+        r.emoji === emoji && 
+        r.sessionId === sessionId
+      );
+      
+      if (existing.length > 0) {
+        console.log('POST /api/reactions - Deleting reaction:', existing[0].id);
+        await db.delete(reactions).where(eq(reactions.id, existing[0].id));
+        console.log('POST /api/reactions - Deleted successfully');
       }
     } else {
-      // Check if user already reacted with this emoji
-      const existingQuery = `*[_type == "reaction" && post._ref == $postId && emoji == $emoji && sessionId == $sessionId][0]`;
-      const existing = await sanityClient.fetch(existingQuery, { postId, emoji, sessionId });
       
-      if (!existing) {
-        // Add reaction
-        await sanityClient.create({
-          _type: 'reaction',
-          post: {
-            _type: 'reference',
-            _ref: postId,
-          },
+      console.log('POST /api/reactions - Adding reaction');
+      const existing = await db
+        .select()
+        .from(reactions)
+        .where(and(
+          eq(reactions.postId, postId),
+          eq(reactions.emoji, emoji),
+          eq(reactions.sessionId, sessionId)
+        ));
+      
+      console.log('POST /api/reactions - Existing reaction:', existing);
+      
+      if (existing.length === 0) {
+        
+        console.log('POST /api/reactions - Creating new reaction');
+        const reactionId = `reaction_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+        await db.insert(reactions).values({
+          id: reactionId,
+          postId,
           emoji,
           sessionId,
-          createdAt: new Date().toISOString(),
+          createdAt: new Date(),
         });
+        console.log('POST /api/reactions - Created reaction:', reactionId);
+      } else {
+        console.log('POST /api/reactions - User already reacted with this emoji');
       }
     }
 
-    // Set session cookie
+    
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const hasSessionCookie = request.headers.get('cookie')?.includes('sessionId=');
     
@@ -119,13 +135,15 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
+    console.log('POST /api/reactions - Success');
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers,
     });
   } catch (error) {
-    console.error('Error updating reaction:', error);
-    return new Response(JSON.stringify({ error: 'Failed to update reaction' }), {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error('Error updating reaction:', errorMessage, error);
+    return new Response(JSON.stringify({ error: 'Failed to update reaction', details: errorMessage }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });

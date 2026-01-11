@@ -11,6 +11,8 @@ import vercel from "@astrojs/vercel/serverless";
 
 import sanity from "@sanity/astro";
 
+import db from "@astrojs/db";
+
 export default defineConfig({
   output: 'server',
   integrations: [tailwind(), react(), mdx(), sanity({
@@ -18,7 +20,7 @@ export default defineConfig({
     dataset: 'production',
    
     useCdn: false,
-  })],
+  }), db()],
 
   adapter: vercel({
     webAnalytics: {

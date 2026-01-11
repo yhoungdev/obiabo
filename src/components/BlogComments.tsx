@@ -84,13 +84,13 @@ export default function BlogComments({ postId }: BlogCommentsProps) {
   return (
     <div className="mt-12 border-t border-gray-700 pt-8">
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-xl font-bold">
+        <h3 className="text-xl font-bold text-gray-100">
           Comments {comments.length > 0 && `(${comments.length})`}
         </h3>
         {!showForm && (
           <button
             onClick={() => setShowForm(true)}
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
+            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors text-white"
           >
             Leave a comment
           </button>
@@ -110,9 +110,9 @@ export default function BlogComments({ postId }: BlogCommentsProps) {
       )}
 
       {showForm && (
-        <form onSubmit={handleSubmit} className="mb-8 p-6 border border-gray-700 rounded-lg">
+        <form onSubmit={handleSubmit} className="mb-8 p-6 border border-gray-700 rounded-lg bg-gray-900">
           <div className="flex items-center justify-between mb-4">
-            <h4 className="text-lg font-semibold">Leave a comment</h4>
+            <h4 className="text-lg font-semibold text-gray-100">Leave a comment</h4>
             <button
               type="button"
               onClick={() => setShowForm(false)}
@@ -125,7 +125,7 @@ export default function BlogComments({ postId }: BlogCommentsProps) {
           
           <div className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-2">
+              <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-300">
                 Name <span className="text-red-500">*</span>
               </label>
               <input
@@ -135,13 +135,13 @@ export default function BlogComments({ postId }: BlogCommentsProps) {
                 maxLength={100}
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500"
+                className="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-gray-100 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
                 placeholder="Your name"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
+              <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-300">
                 Email <span className="text-gray-500 text-xs">(optional)</span>
               </label>
               <input
@@ -149,13 +149,13 @@ export default function BlogComments({ postId }: BlogCommentsProps) {
                 id="email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500"
+                className="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-gray-100 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
                 placeholder="your.email@example.com"
               />
             </div>
 
             <div>
-              <label htmlFor="content" className="block text-sm font-medium mb-2">
+              <label htmlFor="content" className="block text-sm font-medium mb-2 text-gray-300">
                 Comment <span className="text-red-500">*</span>
               </label>
               <textarea
@@ -165,7 +165,7 @@ export default function BlogComments({ postId }: BlogCommentsProps) {
                 rows={4}
                 value={formData.content}
                 onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                className="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 resize-y"
+                className="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-gray-100 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 resize-y"
                 placeholder="Share your thoughts..."
               />
               <p className="text-xs text-gray-500 mt-1">
@@ -177,14 +177,14 @@ export default function BlogComments({ postId }: BlogCommentsProps) {
               <button
                 type="submit"
                 disabled={submitting}
-                className="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-white"
               >
                 {submitting ? 'Submitting...' : 'Submit Comment'}
               </button>
               <button
                 type="button"
                 onClick={() => setShowForm(false)}
-                className="px-6 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors"
+                className="px-6 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors text-gray-100"
               >
                 Cancel
               </button>
@@ -204,11 +204,11 @@ export default function BlogComments({ postId }: BlogCommentsProps) {
           {comments.map((comment) => (
             <div
               key={comment._id}
-              className="p-6 border border-gray-700 rounded-lg hover:border-gray-600 transition-colors"
+              className="p-6 border border-gray-700 rounded-lg hover:border-gray-600 transition-colors bg-gray-800/50"
             >
               <div className="flex items-center justify-between mb-3">
-                <h4 className="font-semibold text-lg">{comment.name}</h4>
-                <time className="text-sm text-gray-400">
+                <h4 className="font-semibold text-lg text-gray-100">{comment.name}</h4>
+                <time className="text-sm text-gray-500">
                   {formatDate(comment.createdAt)}
                 </time>
               </div>

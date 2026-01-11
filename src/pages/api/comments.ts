@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
-import { sanityClient } from '../../utils/sanityClient';
+import { db, eq, comments } from 'astro:db';
 
-// Helper to get/create session ID
+
 function getSessionId(request: Request): string {
   const cookies = request.headers.get('cookie') || '';
   const sessionMatch = cookies.match(/sessionId=([^;]+)/);
@@ -13,12 +13,12 @@ function getSessionId(request: Request): string {
   return `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 }
 
-// Basic email validation
+
 function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-// Basic content sanitization
+
 function sanitizeContent(content: string): string {
   return content.trim().replace(/<[^>]*>/g, '');
 }
@@ -34,23 +34,27 @@ export const GET: APIRoute = async ({ url }) => {
   }
 
   try {
-    // Get approved comments for this post
-    const query = `*[_type == "comment" && post._ref == $postId && approved == true] | order(createdAt desc) {
-      _id,
-      name,
-      content,
-      createdAt
-    }`;
+    const allComments = await db.select().from(comments);
+    const filtered = allComments.filter(c => c.postId === postId);
     
-    const comments = await sanityClient.fetch(query, { postId });
+    const approvedComments = filtered
+      .filter(c => c.approved)
+      .map(c => ({
+        _id: c.id,
+        name: c.name,
+        content: c.content,
+        createdAt: c.createdAt,
+      }))
+      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 
-    return new Response(JSON.stringify({ comments }), {
+    return new Response(JSON.stringify({ comments: approvedComments }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
   } catch (error) {
-    console.error('Error fetching comments:', error);
-    return new Response(JSON.stringify({ error: 'Failed to fetch comments' }), {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error('Error fetching comments:', errorMessage, error);
+    return new Response(JSON.stringify({ error: 'Failed to fetch comments', details: errorMessage }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
@@ -62,7 +66,7 @@ export const POST: APIRoute = async ({ request }) => {
     const body = await request.json();
     const { postId, name, email, content } = body;
 
-    // Validation
+    
     if (!postId || !name || !content) {
       return new Response(
         JSON.stringify({ error: 'Post ID, name, and content are required' }),
@@ -106,23 +110,21 @@ export const POST: APIRoute = async ({ request }) => {
     const sessionId = getSessionId(request);
     const sanitizedContent = sanitizeContent(content);
     const sanitizedName = sanitizeContent(name);
+    const commentId = `comment_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
-    // Create comment (unapproved by default)
-    const comment = await sanityClient.create({
-      _type: 'comment',
-      post: {
-        _type: 'reference',
-        _ref: postId,
-      },
+    
+    await db.insert(comments).values({
+      id: commentId,
+      postId,
       name: sanitizedName,
       email: email || undefined,
       content: sanitizedContent,
       approved: false,
       sessionId,
-      createdAt: new Date().toISOString(),
+      createdAt: new Date(),
     });
 
-    // Set session cookie
+    
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const hasSessionCookie = request.headers.get('cookie')?.includes('sessionId=');
     
@@ -137,7 +139,7 @@ export const POST: APIRoute = async ({ request }) => {
       JSON.stringify({ 
         success: true, 
         message: 'Comment submitted for approval',
-        commentId: comment._id 
+        commentId
       }),
       {
         status: 201,
@@ -145,9 +147,10 @@ export const POST: APIRoute = async ({ request }) => {
       }
     );
   } catch (error) {
-    console.error('Error creating comment:', error);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error('Error creating comment:', errorMessage, error);
     return new Response(
-      JSON.stringify({ error: 'Failed to create comment' }),
+      JSON.stringify({ error: 'Failed to create comment', details: errorMessage }),
       {
         status: 500,
         headers: { 'Content-Type': 'application/json' },

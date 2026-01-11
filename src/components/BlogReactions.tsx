@@ -62,7 +62,10 @@ export default function BlogReactions({ postId }: BlogReactionsProps) {
         body: JSON.stringify({ postId, emoji, remove: hasReacted }),
       });
 
+      const responseData = await response.json();
+      
       if (!response.ok) {
+        console.error('Reaction API error:', responseData);
         // Revert on error
         setReactions(prev => ({
           ...prev,
@@ -85,14 +88,14 @@ export default function BlogReactions({ postId }: BlogReactionsProps) {
   if (loading) {
     return (
       <div className="flex gap-2 items-center justify-center py-4">
-        <div className="text-sm">Loading reactions...</div>
+        <div className="text-sm text-gray-400">Loading reactions...</div>
       </div>
     );
   }
 
   return (
     <div className="border-t border-b border-gray-700 py-6 my-8">
-      <h3 className="text-lg font-semibold mb-4">Reactions</h3>
+      <h3 className="text-lg font-semibold mb-4 text-gray-100">Reactions</h3>
       <div className="flex flex-wrap gap-3">
         {REACTIONS.map(({ emoji, label }) => {
           const reaction = reactions[emoji];
@@ -107,8 +110,8 @@ export default function BlogReactions({ postId }: BlogReactionsProps) {
                 flex items-center gap-2 px-4 py-2 rounded-full 
                 border transition-all duration-200
                 ${hasReacted 
-                  ? 'border-blue-500 bg-blue-500/10' 
-                  : 'border-gray-600 hover:border-gray-500'
+                  ? 'border-blue-500 bg-blue-500/10 text-blue-400' 
+                  : 'border-gray-600 hover:border-gray-500 text-gray-300 hover:text-gray-200'
                 }
                 hover:scale-105 active:scale-95
               `}
@@ -117,7 +120,7 @@ export default function BlogReactions({ postId }: BlogReactionsProps) {
             >
               <span className="text-xl">{emoji}</span>
               {count > 0 && (
-                <span className={`text-sm font-medium ${hasReacted ? 'text-blue-400' : ''}`}>
+                <span className={`text-sm font-medium ${hasReacted ? 'text-blue-400' : 'text-gray-400'}`}>
                   {count}
                 </span>
               )}
