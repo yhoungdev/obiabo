@@ -2,9 +2,9 @@ import type { APIRoute } from 'astro';
 import { db, eq, comments } from 'astro:db';
 import { Telegraf } from 'telegraf';
 
-// Get environment variable - works in both dev and production
+
 function getEnv(key: string): string | undefined {
-  // In production (Vercel), use process.env; in dev, use import.meta.env
+  
   if (import.meta.env.PROD) {
     return process.env[key];
   }
@@ -124,7 +124,25 @@ export const GET: APIRoute = async ({ request }) => {
   const statusKey = url.searchParams.get('status');
   const adminSecret = getEnv('ADMIN_SECRET') || 'admin123';
 
-  // Status check endpoint - returns webhook info
+  
+  if (url.searchParams.get('health') === 'check') {
+    const isConfigured = !!botToken && !!chatId;
+    
+    return new Response(JSON.stringify({ 
+      status: isConfigured ? 'ready' : 'not_configured',
+      timestamp: new Date().toISOString(),
+      environment: import.meta.env.PROD ? 'production' : 'development',
+      bot: {
+        tokenConfigured: !!botToken,
+        chatIdConfigured: !!chatId,
+      }
+    }), {
+      status: isConfigured ? 200 : 503,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  
   if (statusKey === adminSecret) {
     if (!botToken) {
       return new Response(JSON.stringify({ 
@@ -162,7 +180,7 @@ export const GET: APIRoute = async ({ request }) => {
     }
   }
 
-  // Setup webhook endpoint
+  
   if (setupKey !== adminSecret) {
     return new Response(JSON.stringify({ error: 'Unauthorized' }), {
       status: 401,
