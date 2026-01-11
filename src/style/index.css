@@ -1,18 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Instrument+Serif:ital@0;1&display=swap");
 
+/* Theme CSS Variables - Dark mode is default */
+:root {
+  --bg-primary: #141414;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #0f0f0f;
+  --text-color: #c8ccda;
+  --text-muted: #999;
+  --text-dim: #666;
+  --border-color: #333;
+  --hover-bg: #1a1a1a;
+  --accent: oklch(57.7% 0.245 27.325);
+}
+
+html[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f8f8;
+  --bg-tertiary: #f0f0f0;
+  --text-color: #1a1a1a;
+  --text-muted: #666;
+  --text-dim: #999;
+  --border-color: #e0e0e0;
+  --hover-bg: #f0f0f0;
+  --accent: oklch(57.7% 0.245 27.325);
+}
+
 * {
   font-family: "IBM Plex Mono", monospace !important;
-  color: #c8ccda;
+  color: var(--text-color);
   line-height: 1.8em;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 body, html {
-    background-color: #141414;
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease;
 }
 
 .custom-link {
   font-weight: 600 !important;
-  color: oklch(57.7% 0.245 27.325) !important;
+  color: var(--accent) !important;
   text-decoration: underline !important;
 }
 
@@ -21,9 +48,9 @@ html {
 }
 
 a {
-  color: #c8ccda;
+  color: var(--text-color);
   text-decoration: none;
-  background-color: transparent !important  ;
+  background-color: transparent !important;
 }
 
 .ibm-plex-mono-thin {

@@ -1,0 +1,95 @@
+---
+// Theme toggle component - no props needed
+---
+
+<div class="theme-toggle">
+  <button 
+    id="theme-toggle-btn"
+    class="theme-button"
+    aria-label="Toggle theme"
+    title="Toggle light/dark mode"
+  >
+    <span class="theme-icon" id="theme-icon">🌙</span>
+  </button>
+</div>
+
+<script is:inline>
+  (function() {
+    const themeIcon = document.getElementById('theme-icon');
+    const themeBtn = document.getElementById('theme-toggle-btn');
+    
+    function updateThemeIcon(theme) {
+      if (themeIcon) {
+        themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      }
+    }
+    
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      updateThemeIcon(theme);
+    }
+    
+    // Check for saved theme preference, default to 'dark'
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'dark');
+    
+    // Apply theme on page load
+    applyTheme(initialTheme);
+    
+    // Theme toggle button functionality
+    themeBtn?.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      applyTheme(newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+    
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      const newTheme = e.matches ? 'dark' : 'light';
+      if (!localStorage.getItem('theme')) {
+        applyTheme(newTheme);
+      }
+    });
+  })();
+</script>
+
+<style>
+  .theme-toggle {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 50;
+  }
+  
+  .theme-button {
+    background: none;
+    /* border: 1px solid var(--border-color); */
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+    min-width: 40px;
+    min-height: 40px;
+  }
+  
+  .theme-button:hover {
+    background-color: var(--hover-bg);
+    border-color: var(--text-color);
+  }
+  
+  .theme-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  
+  .theme-button:hover .theme-icon {
+    transform: rotate(20deg);
+  }
+</style>

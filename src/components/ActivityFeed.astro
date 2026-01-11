@@ -108,7 +108,7 @@ const activities: Activity[] = [
 
 <style>
   .activity-feed {
-    background: #1a1a1a;
+    background: var(--bg-secondary);
     border-radius: 8px;
     padding: 1.5rem;
     margin: 2rem 0;
@@ -118,7 +118,7 @@ const activities: Activity[] = [
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.9rem;
     font-weight: 500;
-    color: #c8ccda;
+    color: var(--text-color);
     margin: 0 0 1.5rem 0;
     text-transform: lowercase;
   }
@@ -133,15 +133,15 @@ const activities: Activity[] = [
     display: flex;
     gap: 1rem;
     padding: 0.75rem;
-    background: #0f0f0f;
+    background: var(--bg-tertiary);
     border-radius: 6px;
     border-left: 2px solid transparent;
     transition: all 0.2s ease;
   }
 
   .activity-item:hover {
-    background: #141414;
-    border-left-color: #c8ccda;
+    background: var(--hover-bg);
+    border-left-color: var(--text-color);
   }
 
   .activity-icon {
@@ -161,24 +161,24 @@ const activities: Activity[] = [
     gap: 0.5rem;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.8rem;
-    color: #c8ccda;
+    color: var(--text-color);
     margin-bottom: 0.25rem;
   }
 
   .activity-name {
     font-weight: 500;
-    color: #c8ccda;
+    color: var(--text-color);
   }
 
   .activity-action {
-    color: #666;
+    color: var(--text-dim);
     font-size: 0.75rem;
   }
 
   .activity-preview {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.75rem;
-    color: #999;
+    color: var(--text-muted);
     margin: 0.25rem 0 0.5rem 0;
     line-height: 1.4;
   }
@@ -186,25 +186,25 @@ const activities: Activity[] = [
   .activity-post {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.7rem;
-    color: #666;
+    color: var(--text-dim);
     text-decoration: none;
     transition: color 0.2s;
     display: inline-block;
   }
 
   .activity-post:hover {
-    color: #c8ccda;
+    color: var(--text-color);
   }
 
   .activity-time {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.65rem;
-    color: #444;
+    color: var(--text-muted);
   }
 
   .empty-activity {
     text-align: center;
-    color: #555;
+    color: var(--text-dim);
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.8rem;
     padding: 2rem 1rem;
