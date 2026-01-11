@@ -7,7 +7,6 @@ import Header from '../../components/header/index.astro';
 import '../../style/index.css';
 import { getSanityPosts } from '../../utils/getSanityPosts';
 import { db, reactions, comments } from 'astro:db';
-import { eq, and } from '@astrojs/db/dist/runtime/virtual.js';
 
 const posts = await getSanityPosts();
 
