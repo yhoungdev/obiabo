@@ -43,7 +43,7 @@ export default function BlogReactions({ postId }: BlogReactionsProps) {
     const currentReaction = reactions[emoji];
     const hasReacted = currentReaction?.hasReacted;
 
-    // Optimistic update
+    
     setReactions(prev => ({
       ...prev,
       [emoji]: {
@@ -66,7 +66,7 @@ export default function BlogReactions({ postId }: BlogReactionsProps) {
       
       if (!response.ok) {
         console.error('Reaction API error:', responseData);
-        // Revert on error
+        
         setReactions(prev => ({
           ...prev,
           [emoji]: {
@@ -80,7 +80,7 @@ export default function BlogReactions({ postId }: BlogReactionsProps) {
       }
     } catch (error) {
       console.error('Failed to update reaction:', error);
-      // Revert on error
+      
       fetchReactions();
     }
   };
@@ -118,9 +118,9 @@ export default function BlogReactions({ postId }: BlogReactionsProps) {
               title={label}
               aria-label={`${label} reaction${count > 0 ? `, ${count} reactions` : ''}`}
             >
-              <span className="text-xl">{emoji}</span>
+              <span className="text-xl bg-transparent">{emoji}</span>
               {count > 0 && (
-                <span className={`text-sm font-medium ${hasReacted ? 'text-blue-400' : 'text-gray-400'}`}>
+                <span className={`text-sm font-medium bg-transparent ${hasReacted ? 'text-blue-400' : 'text-gray-400'}`}>
                   {count}
                 </span>
               )}

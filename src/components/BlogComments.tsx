@@ -60,8 +60,7 @@ export default function BlogComments({ postId }: BlogCommentsProps) {
         });
         setFormData({ name: '', email: '', content: '' });
         setShowForm(false);
-        // Optionally refresh comments (though new ones won't show until approved)
-        // fetchComments();
+       
       } else {
         setMessage({ type: 'error', text: data.error || 'Failed to submit comment' });
       }
@@ -110,7 +109,7 @@ export default function BlogComments({ postId }: BlogCommentsProps) {
       )}
 
       {showForm && (
-        <form onSubmit={handleSubmit} className="mb-8 p-6 border border-gray-700 rounded-lg bg-gray-900">
+        <form onSubmit={handleSubmit} className="mb-8 p-6 border border-gray-700 rounded-lg ">
           <div className="flex items-center justify-between mb-4">
             <h4 className="text-lg font-semibold text-gray-100">Leave a comment</h4>
             <button
@@ -204,10 +203,10 @@ export default function BlogComments({ postId }: BlogCommentsProps) {
           {comments.map((comment) => (
             <div
               key={comment._id}
-              className="p-6 border border-gray-700 rounded-lg hover:border-gray-600 transition-colors bg-gray-800/50"
+              className="p-6 border border-gray-700 rounded-lg hover:border-gray-600 transition-colors "
             >
               <div className="flex items-center justify-between mb-3">
-                <h4 className="font-semibold text-lg text-gray-100">{comment.name}</h4>
+                <h4 className="font-semibold bg-transparent text-lg text-gray-100">{comment.name}</h4>
                 <time className="text-sm text-gray-500">
                   {formatDate(comment.createdAt)}
                 </time>
