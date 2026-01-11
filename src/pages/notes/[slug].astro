@@ -8,6 +8,9 @@ import BlogReactions from '../../components/BlogReactions';
 import BlogComments from '../../components/BlogComments';
 import ViewCounter from '../../components/ViewCounter';
 import ShareButtons from '../../components/ShareButtons.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+import Webmentions from '../../components/Webmentions.astro';
+import { calculateReadingTime } from '../../utils/readingTime';
 import { getSanityPostBySlug } from '../../utils/getSanityPostBySlug';
 
 const { slug } = Astro.params;
@@ -68,8 +71,14 @@ const { title, description: desc, tags, publishedAt, body, mainImage } = post;
       )}
       <div class="flex items-center gap-4 mb-8 text-sm">
         <span class="italic">Published on <b>{publishedAt ? new Date(publishedAt).toLocaleDateString("en-US", { dateStyle: "long" }) : 'Unknown'}</b></span>
+        <span class="italic">• {calculateReadingTime(body)} min read</span>
         <ViewCounter client:load postId={slug} />
       </div>
+
+      {body && body.length > 0 && (
+        <TableOfContents blocks={body} />
+      )}
+
       <article class="prose prose-md max-w-none">
         <PortableTextRenderer client:load value={body} />
       </article>
@@ -81,6 +90,8 @@ const { title, description: desc, tags, publishedAt, body, mainImage } = post;
       />
 
       <BlogReactions client:load postId={post._id} />
+      
+      <Webmentions client:load postId={post._id} />
       
       <BlogComments client:load postId={post._id} />
       

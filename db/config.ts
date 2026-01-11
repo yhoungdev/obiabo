@@ -1,4 +1,5 @@
 import { defineDb, defineTable, column } from 'astro:db';
+import { webmentions } from './webmentions';
 
 export const reactions = defineTable({
   columns: {
@@ -33,5 +34,5 @@ export const views = defineTable({
 });
 
 export default defineDb({
-  tables: { reactions, comments, views },
+  tables: { reactions, comments, views, webmentions },
 });
