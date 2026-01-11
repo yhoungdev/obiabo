@@ -1,0 +1,251 @@
+---
+import Header from '../components/header/index.astro';
+import '../style/index.css';
+import { getSanityPosts } from '../utils/getSanityPosts';
+
+const posts = await getSanityPosts();
+const query = new URL(Astro.request.url).searchParams.get('q')?.toLowerCase() || '';
+
+const searchResults = query 
+  ? posts.filter(post =>
+      post.title.toLowerCase().includes(query) ||
+      post.body?.some(block => 
+        block._type === 'block' && 
+        block.children?.some(child => 
+          child.text?.toLowerCase().includes(query)
+        )
+      )
+    )
+  : [];
+---
+
+<Header />
+
+<main class="search-container">
+  <div class="search-header">
+    <h1>search thoughts</h1>
+    <form method="get" class="search-form">
+      <input 
+        type="text" 
+        name="q" 
+        placeholder="find a thought..."
+        value={query}
+        class="search-input"
+        autofocus
+      />
+      <button type="submit" class="search-btn">search</button>
+    </form>
+  </div>
+
+  {query && (
+    <div class="results-info">
+      <span class="result-count">{searchResults.length}</span>
+      <span class="result-text">result{searchResults.length !== 1 ? 's' : ''} found</span>
+    </div>
+  )}
+
+  <div class="search-results">
+    {searchResults.length > 0 ? (
+      <div class="posts-grid">
+        {searchResults.map(post => (
+          <a href={`/notes/${post.slug.current}`} class="post-card">
+            <div class="post-header">
+              <h2 class="post-title">{post.title}</h2>
+              <time class="post-date">
+                {new Date(post.publishedAt).toLocaleDateString('en-US', { 
+                  month: 'short', 
+                  day: 'numeric',
+                  year: 'numeric'
+                })}
+              </time>
+            </div>
+            {post.body && post.body[0] && (
+              <p class="post-excerpt">
+                {post.body[0]._type === 'block' && post.body[0].children?.[0]?.text
+                  ? post.body[0].children[0].text.substring(0, 150) + '...'
+                  : ''}
+              </p>
+            )}
+          </a>
+        ))}
+      </div>
+    ) : query ? (
+      <div class="no-results">
+        <p>no thoughts match "{query}"</p>
+        <p class="no-results-hint">try a different search term</p>
+      </div>
+    ) : (
+      <div class="empty-search">
+        <p>enter a search term to find thoughts</p>
+      </div>
+    )}
+  </div>
+</main>
+
+<style>
+  .search-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+
+  .search-header {
+    margin-bottom: 3rem;
+  }
+
+  .search-header h1 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #c8ccda;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .search-form {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .search-input {
+    flex: 1;
+    padding: 0.875rem 1rem;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    color: #c8ccda;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.875rem;
+    transition: border-color 0.2s;
+  }
+
+  .search-input:focus {
+    outline: none;
+    border-color: #444;
+  }
+
+  .search-input::placeholder {
+    color: #555;
+  }
+
+  .search-btn {
+    padding: 0.875rem 1.5rem;
+    background: #c8ccda;
+    color: #141414;
+    border: none;
+    border-radius: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .search-btn:hover {
+    opacity: 0.9;
+  }
+
+  .results-info {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    color: #666;
+  }
+
+  .result-count {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #c8ccda;
+  }
+
+  .search-results {
+    min-height: 200px;
+  }
+
+  .posts-grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .post-card {
+    padding: 1.5rem;
+    background: #1a1a1a;
+    border-radius: 8px;
+    border-left: 2px solid #333;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+  }
+
+  .post-card:hover {
+    background: #0f0f0f;
+    border-left-color: #c8ccda;
+    transform: translateX(4px);
+  }
+
+  .post-header {
+    margin-bottom: 0.75rem;
+  }
+
+  .post-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #c8ccda;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .post-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: #666;
+  }
+
+  .post-excerpt {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: #999;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .no-results,
+  .empty-search {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #666;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .no-results p:first-child,
+  .empty-search p {
+    font-size: 1rem;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .no-results-hint {
+    font-size: 0.85rem;
+    color: #555;
+  }
+
+  @media (max-width: 640px) {
+    .search-container {
+      padding: 2rem 1rem;
+    }
+
+    .search-header h1 {
+      font-size: 1.25rem;
+    }
+
+    .search-form {
+      flex-direction: column;
+    }
+
+    .search-btn {
+      width: 100%;
+    }
+  }
+</style>

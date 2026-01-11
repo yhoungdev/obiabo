@@ -1,0 +1,157 @@
+---
+interface Props {
+  title: string;
+  url: string;
+  description?: string;
+}
+
+const { title, url, description } = Astro.props;
+
+// Encode for URL sharing
+const encodedTitle = encodeURIComponent(title);
+const encodedUrl = encodeURIComponent(url);
+const encodedDesc = encodeURIComponent(description || title);
+
+// Social share URLs
+const shareLinks = {
+  twitter: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`,
+  linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
+  facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+  copy: 'copy' // Special case for copy to clipboard
+};
+---
+
+<div class="share-buttons">
+  <span class="share-label">share</span>
+  <div class="share-links">
+    <a 
+      href={shareLinks.twitter} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="share-btn twitter"
+      title="Share on Twitter"
+    >
+      𝕏
+    </a>
+    <a 
+      href={shareLinks.linkedin} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="share-btn linkedin"
+      title="Share on LinkedIn"
+    >
+      in
+    </a>
+    <a 
+      href={shareLinks.facebook} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="share-btn facebook"
+      title="Share on Facebook"
+    >
+      f
+    </a>
+    <button 
+      class="share-btn copy"
+      title="Copy link"
+      onclick="copyToClipboard()"
+    >
+      ✓
+    </button>
+  </div>
+</div>
+
+<script define:vars={{ url }}>
+  function copyToClipboard() {
+    navigator.clipboard.writeText(url).then(() => {
+      const btn = event.target;
+      const original = btn.textContent;
+      btn.textContent = 'copied!';
+      btn.style.color = '#4ade80';
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.style.color = '#c8ccda';
+      }, 2000);
+    });
+  }
+</script>
+
+<style>
+  .share-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    margin: 2rem 0;
+  }
+
+  .share-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: lowercase;
+  }
+
+  .share-links {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .share-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #0f0f0f;
+    color: #c8ccda;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .share-btn:hover {
+    border-color: #444;
+    background: #1a1a1a;
+    transform: translateY(-2px);
+  }
+
+  .share-btn.twitter:hover {
+    border-color: #1d9bf0;
+    color: #1d9bf0;
+  }
+
+  .share-btn.linkedin:hover {
+    border-color: #0a66c2;
+    color: #0a66c2;
+  }
+
+  .share-btn.facebook:hover {
+    border-color: #1877f2;
+    color: #1877f2;
+  }
+
+  .share-btn.copy:hover {
+    border-color: #4ade80;
+    color: #4ade80;
+  }
+
+  @media (max-width: 640px) {
+    .share-buttons {
+      gap: 0.5rem;
+    }
+
+    .share-btn {
+      width: 36px;
+      height: 36px;
+      font-size: 0.8rem;
+    }
+  }
+</style>

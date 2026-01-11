@@ -7,6 +7,7 @@ import PortableTextRenderer from '../../utils/PortableTextRenderer';
 import BlogReactions from '../../components/BlogReactions';
 import BlogComments from '../../components/BlogComments';
 import ViewCounter from '../../components/ViewCounter';
+import ShareButtons from '../../components/ShareButtons.astro';
 import { getSanityPostBySlug } from '../../utils/getSanityPostBySlug';
 
 const { slug } = Astro.params;
@@ -72,6 +73,12 @@ const { title, description: desc, tags, publishedAt, body, mainImage } = post;
       <article class="prose prose-md max-w-none">
         <PortableTextRenderer client:load value={body} />
       </article>
+
+      <ShareButtons 
+        title={title} 
+        url={`${Astro.url.origin}/notes/${slug}`}
+        description={desc}
+      />
 
       <BlogReactions client:load postId={post._id} />
       
