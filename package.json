@@ -28,6 +28,7 @@
     "marked": "^17.0.1",
     "prettier": "^3.4.2",
     "react": "^19.2.3",
+    "react-confetti-boom": "^2.0.1",
     "react-dom": "^19.2.3",
     "react-is": "^19.2.3",
     "sanity": "^5.1.0",
