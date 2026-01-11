@@ -7,11 +7,11 @@ const posts = await getSanityPosts();
 const query = new URL(Astro.request.url).searchParams.get('q')?.toLowerCase() || '';
 
 const searchResults = query 
-  ? posts.filter(post =>
+  ? posts.filter((post: any) =>
       post.title.toLowerCase().includes(query) ||
-      post.body?.some(block => 
+      post.body?.some((block: any) => 
         block._type === 'block' && 
-        block.children?.some(child => 
+        block.children?.some((child: any) => 
           child.text?.toLowerCase().includes(query)
         )
       )
@@ -47,7 +47,7 @@ const searchResults = query
   <div class="search-results">
     {searchResults.length > 0 ? (
       <div class="posts-grid">
-        {searchResults.map(post => (
+        {searchResults.map((post: any) => (
           <a href={`/notes/${post.slug.current}`} class="post-card">
             <div class="post-header">
               <h2 class="post-title">{post.title}</h2>

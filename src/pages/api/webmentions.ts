@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { db, webmentions } from 'astro:db';
+import { db, webmentions, eq } from 'astro:db';
 
 
 
@@ -76,7 +76,7 @@ export const GET: APIRoute = async ({ url }) => {
     const mentions = await db
       .select()
       .from(webmentions)
-      .where((w) => w.postId === postId);
+      .where(eq(webmentions.postId, postId));
 
     return new Response(JSON.stringify({ webmentions: mentions }), {
       status: 200,

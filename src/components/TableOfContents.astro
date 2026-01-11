@@ -3,7 +3,7 @@ interface Props {
   blocks: any[];
 }
 
-const { blocks } = Astro.props;
+const { blocks } = Astro.props as Props;
 
 // Extract headings from blocks
 const headings = blocks
@@ -14,11 +14,6 @@ const headings = blocks
     level: parseInt(block.style.replace('h', ''))
   }))
   .filter(h => h.text);
-
-// If no headings, don't render
-if (headings.length === 0) {
-  Astro.props.children = null;
-}
 ---
 
 {headings.length > 0 && (

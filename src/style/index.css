@@ -2,11 +2,13 @@
 
 * {
   font-family: "IBM Plex Mono", monospace !important;
-  background-color: #141414;
   color: #c8ccda;
-  line-height: 2em;
+  line-height: 1.8em;
 }
 
+body, html {
+    background-color: #141414;
+}
 
 .custom-link {
   font-weight: 600 !important;

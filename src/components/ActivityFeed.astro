@@ -1,32 +1,50 @@
 ---
+
 import { db, comments, reactions } from 'astro:db';
 import { getSanityPosts } from '../utils/getSanityPosts';
 
-const posts = await getSanityPosts();
-const postMap = Object.fromEntries(posts.map(p => [p._id, p]));
+type CommentActivity = {
+  type: 'comment';
+  name: string;
+  postId: string;
+  date: Date;
+  preview: string;
+};
 
-// Get recent comments (last 5 approved)
+type ReactionActivity = {
+  type: 'reaction';
+  postId: string;
+  date: Date;
+  emoji: string;
+};
+
+type Activity = CommentActivity | ReactionActivity;
+
+const posts = await getSanityPosts();
+const postMap = Object.fromEntries(posts.map((p: any) => [p._id, p]));
+
+
 const recentComments = (await db.select().from(comments))
   .filter(c => c.approved)
   .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
   .slice(0, 5);
 
-// Get recent reactions (last 5)
+
 const recentReactions = (await db.select().from(reactions))
   .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
   .slice(0, 5);
 
-// Combine and sort by date
-const activities = [
+
+const activities: Activity[] = [
   ...recentComments.map(c => ({
-    type: 'comment',
+    type: 'comment' as const,
     name: c.name,
     postId: c.postId,
     date: c.createdAt,
     preview: c.content.substring(0, 50) + (c.content.length > 50 ? '...' : '')
   })),
   ...recentReactions.map(r => ({
-    type: 'reaction',
+    type: 'reaction' as const,
     postId: r.postId,
     date: r.createdAt,
     emoji: r.emoji
@@ -43,16 +61,16 @@ const activities = [
       activities.map(activity => {
         const post = postMap[activity.postId];
         return (
-          <div class="activity-item">
+          <div class="activity-item  hover:bg-gray-800 mt-4">
             {activity.type === 'comment' ? (
               <>
                 <div class="activity-icon comment-icon">💬</div>
                 <div class="activity-content">
                   <div class="activity-title">
-                    <span class="activity-name">{activity.name}</span>
+                    <span class="activity-name">{activity.type === 'comment' && activity.name}</span>
                     <span class="activity-action">commented</span>
                   </div>
-                  <p class="activity-preview">{activity.preview}</p>
+                  <p class="activity-preview">{activity.type === 'comment' && activity.preview}</p>
                   {post && (
                     <a href={`/notes/${post.slug.current}`} class="activity-post">
                       on "{post.title}"
@@ -62,9 +80,9 @@ const activities = [
               </>
             ) : (
               <>
-                <div class="activity-icon reaction-icon">{activity.emoji}</div>
+                <div class="activity-icon reaction-icon">{activity.type === 'reaction' && activity.emoji}</div>
                 <div class="activity-content">
-                  <div class="activity-action">reacted</div>
+                  <div class="activity-action ">reacted</div>
                   {post && (
                     <a href={`/notes/${post.slug.current}`} class="activity-post">
                       to "{post.title}"
