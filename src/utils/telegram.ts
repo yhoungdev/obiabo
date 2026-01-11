@@ -14,12 +14,26 @@ function escapeMarkdown(text: string): string {
   return text.replace(/[_*[\]()~`>#+=|{}.!-]/g, '\\$&');
 }
 
+// Get environment variable - works in both dev and production
+function getEnv(key: string): string | undefined {
+  // In production (Vercel), use process.env; in dev, use import.meta.env
+  if (import.meta.env.PROD) {
+    return process.env[key];
+  }
+  return import.meta.env[key] as string | undefined;
+}
+
 export async function sendTelegramNotification(message: TelegramMessage): Promise<boolean> {
-  const botToken = import.meta.env.TELEGRAM_BOT_TOKEN;
-  const chatId = import.meta.env.TELEGRAM_CHAT_ID;
+  const botToken = getEnv('TELEGRAM_BOT_TOKEN');
+  const chatId = getEnv('TELEGRAM_CHAT_ID');
+
+  console.log('[Telegram] Attempting to send notification...');
+  console.log('[Telegram] Bot token exists:', !!botToken);
+  console.log('[Telegram] Chat ID exists:', !!chatId);
 
   if (!botToken || !chatId) {
-    console.warn('Telegram credentials not configured. Skipping notification.');
+    console.warn('[Telegram] Credentials not configured. Skipping notification.');
+    console.warn('[Telegram] Missing:', !botToken ? 'TELEGRAM_BOT_TOKEN' : '', !chatId ? 'TELEGRAM_CHAT_ID' : '');
     return false;
   }
 
@@ -51,17 +65,17 @@ ${escapeMarkdown(message.content)}
       },
     });
 
-    console.log('Telegram notification sent successfully');
+    console.log('[Telegram] Notification sent successfully');
     return true;
   } catch (error) {
-    console.error('Failed to send Telegram notification:', error);
+    console.error('[Telegram] Failed to send notification:', error);
     return false;
   }
 }
 
 // Get bot instance for webhook handling
 export function getTelegramBot(): Telegraf | null {
-  const botToken = import.meta.env.TELEGRAM_BOT_TOKEN;
+  const botToken = getEnv('TELEGRAM_BOT_TOKEN');
   if (!botToken) return null;
   return new Telegraf(botToken);
 }
