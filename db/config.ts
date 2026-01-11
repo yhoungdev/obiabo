@@ -23,6 +23,15 @@ export const comments = defineTable({
   },
 });
 
+export const views = defineTable({
+  columns: {
+    id: column.text({ primaryKey: true }),
+    postId: column.text(),
+    sessionId: column.text(),
+    createdAt: column.date({ default: new Date() }),
+  },
+});
+
 export default defineDb({
-  tables: { reactions, comments },
+  tables: { reactions, comments, views },
 });

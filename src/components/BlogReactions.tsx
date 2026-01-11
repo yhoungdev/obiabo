@@ -49,7 +49,7 @@ export default function BlogReactions({ postId }: BlogReactionsProps) {
     
     setExplosions(prev => [...prev, newExplosion]);
     
-    // Clean up after animation
+    
     setTimeout(() => {
       setExplosions(prev => prev.filter(e => e.id !== newExplosion.id));
     }, 3000);
@@ -71,7 +71,7 @@ export default function BlogReactions({ postId }: BlogReactionsProps) {
     const currentReaction = reactions[emoji];
     const hasReacted = currentReaction?.hasReacted;
 
-    // Only trigger explosion when adding a reaction (not removing)
+    
     if (!hasReacted) {
       triggerExplosion(emoji, event);
     }

@@ -6,6 +6,7 @@ import '../../style/index.css';
 import PortableTextRenderer from '../../utils/PortableTextRenderer';
 import BlogReactions from '../../components/BlogReactions';
 import BlogComments from '../../components/BlogComments';
+import ViewCounter from '../../components/ViewCounter';
 import { getSanityPostBySlug } from '../../utils/getSanityPostBySlug';
 
 const { slug } = Astro.params;
@@ -64,7 +65,10 @@ const { title, description: desc, tags, publishedAt, body, mainImage } = post;
           class="w-full rounded-lg shadow-lg mb-8 max-h-96 object-cover"
         />
       )}
-      <p class="mb-8 text-sm italic">Published on <b>{publishedAt ? new Date(publishedAt).toLocaleDateString("en-US", { dateStyle: "long" }) : 'Unknown'}</b></p>
+      <div class="flex items-center gap-4 mb-8 text-sm">
+        <span class="italic">Published on <b>{publishedAt ? new Date(publishedAt).toLocaleDateString("en-US", { dateStyle: "long" }) : 'Unknown'}</b></span>
+        <ViewCounter client:load postId={slug} />
+      </div>
       <article class="prose prose-md max-w-none">
         <PortableTextRenderer client:load value={body} />
       </article>
