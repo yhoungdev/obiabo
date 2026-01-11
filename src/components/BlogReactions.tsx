@@ -127,7 +127,7 @@ export default function BlogReactions({ postId }: BlogReactionsProps) {
 
   return (
     <div className="border-t border-b border-gray-700 py-6 my-8 reactions-container relative overflow-visible">
-      {/* Emoji Explosions - Custom Implementation */}
+   
       {explosions.map((explosion) => (
         Array.from({ length: 25 }).map((_, i) => {
           const angle = (i / 25) * 360 + (explosion.id % 100) * 0.3;
