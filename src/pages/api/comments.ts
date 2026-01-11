@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import { db, eq, comments } from 'astro:db';
+import { sendTelegramNotification } from '../../utils/telegram';
 
 
 function getSessionId(request: Request): string {
@@ -125,6 +126,13 @@ export const POST: APIRoute = async ({ request }) => {
     });
 
     
+    sendTelegramNotification({
+      postId,
+      name: sanitizedName,
+      content: sanitizedContent,
+      email: email || undefined,
+    }).catch(err => console.error('Telegram notification failed:', err));
+
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const hasSessionCookie = request.headers.get('cookie')?.includes('sessionId=');
     
