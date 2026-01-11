@@ -50,6 +50,9 @@ importers:
       astro:
         specifier: ^5.10.0
         version: 5.10.0(@types/node@24.0.3)(jiti@2.6.1)(rollup@4.44.0)(tsx@4.21.0)(typescript@5.7.2)(yaml@2.6.1)
+      iconsax-reactjs:
+        specifier: ^0.0.8
+        version: 0.0.8(react@19.2.3)
       integration:
         specifier: ^0.3.1
         version: 0.3.1
@@ -4142,6 +4145,11 @@ packages:
 
   i18next@23.16.8:
     resolution: {integrity: sha512-06r/TitrM88Mg5FdUXAKL96dJMzgqLE5dv3ryBAra4KCwD9mJ4ndOTS95ZuymIGoE+2hzfdaMak2X11/es7ZWg==}
+
+  iconsax-reactjs@0.0.8:
+    resolution: {integrity: sha512-cb+uTMxbkSFNbu8ZclX7BWQVfOWQt8+m/PsDjnsm/H+mcYrnfTYMjHxiof1FB43k7UAgt1ds+0oFeMVKdqyslw==}
+    peerDependencies:
+      react: '*'
 
   iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
@@ -11668,6 +11676,10 @@ snapshots:
   i18next@23.16.8:
     dependencies:
       '@babel/runtime': 7.28.4
+
+  iconsax-reactjs@0.0.8(react@19.2.3):
+    dependencies:
+      react: 19.2.3
 
   iconv-lite@0.6.3:
     dependencies:
