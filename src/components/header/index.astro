@@ -1,5 +1,6 @@
 ---
   import Nav from './nav.astro'
+  import ThemeToggle from '../ThemeToggle.astro'
 
   const personal_urls = [
     {
@@ -22,7 +23,7 @@
 ---
 
 <div>
-
+ 
   <Nav/>
 
   <header class="text-center mb-12 mt-12">
@@ -45,5 +46,10 @@
         ))
       }
     </div>
+
+    <center>
+
+     <ThemeToggle />
+    </center>
   </header>
 </div>

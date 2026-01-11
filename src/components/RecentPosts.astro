@@ -27,7 +27,7 @@ const recentPosts = allPosts.slice(0, 5); // Get 5 most recent posts
 
 <style>
   .recent-posts {
-    background: #1a1a1a;
+    background: var(--bg-secondary);
     border-radius: 8px;
     padding: 1.5rem;
     margin: 2rem 0;
@@ -37,7 +37,7 @@ const recentPosts = allPosts.slice(0, 5); // Get 5 most recent posts
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.9rem;
     font-weight: 500;
-    color: #c8ccda;
+    color: var(--text-color);
     margin: 0 0 1rem 0;
     text-transform: lowercase;
   }
@@ -56,14 +56,14 @@ const recentPosts = allPosts.slice(0, 5); // Get 5 most recent posts
   .post-item {
     padding: 0.75rem;
     border-radius: 6px;
-    background: #0f0f0f;
+    background: var(--bg-tertiary);
     transition: all 0.2s ease;
     border-left: 2px solid transparent;
   }
 
   .post-item:hover {
-    background: #141414;
-    border-left-color: #c8ccda;
+    background: var(--hover-bg);
+    border-left-color: var(--text-color);
     transform: translateX(4px);
   }
 
@@ -71,7 +71,7 @@ const recentPosts = allPosts.slice(0, 5); // Get 5 most recent posts
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.85rem;
     font-weight: 500;
-    color: #c8ccda;
+    color: var(--text-color);
     margin-bottom: 0.25rem;
     line-height: 1.4;
   }
@@ -79,6 +79,6 @@ const recentPosts = allPosts.slice(0, 5); // Get 5 most recent posts
   .post-date {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.7rem;
-    color: #666;
+    color: var(--text-dim);
   }
 </style>
