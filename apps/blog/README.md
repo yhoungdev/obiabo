@@ -1,4 +1,22 @@
-# Sanity Blogging Content Studio
+# Blog Studio
+
+This is the separate Sanity Studio app for writing and managing blog posts.
+
+From the repository root:
+
+```sh
+pnpm blog:dev
+pnpm blog:deploy
+```
+
+Or directly from this app:
+
+```sh
+pnpm --filter @obiabo/blog dev
+pnpm --filter @obiabo/blog deploy
+```
+
+`pnpm blog:deploy` publishes the Studio remotely through Sanity so it can be opened in a browser and used to write posts.
 
 Congratulations, you have now installed the Sanity Content Studio, an open-source real-time content editing environment connected to the Sanity backend.
 

@@ -1,5 +1,6 @@
 {
-  "name": "peaceful-parallax",
+  "name": "@obiabo/site",
+  "private": true,
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -8,7 +9,11 @@
     "build": "astro check && astro build --remote",
     "preview": "astro preview",
     "astro": "astro",
-    "db:push": "astro db push --remote"
+    "db:push": "astro db push --remote",
+    "blog:dev": "pnpm --filter @obiabo/blog run dev",
+    "blog:start": "pnpm --filter @obiabo/blog run start",
+    "blog:build": "pnpm --filter @obiabo/blog run build",
+    "blog:deploy": "pnpm --filter @obiabo/blog run deploy"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",

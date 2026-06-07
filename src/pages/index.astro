@@ -4,8 +4,10 @@ import Project from '../components/project.astro'
 import About from '../components/sections/about.astro'
 import RecentPosts from '../components/RecentPosts.astro'
 import ActivityFeed from '../components/ActivityFeed.astro'
+import { getSanityProjects } from '../utils/getSanityProjects'
 import '../../src/style/index.css'
 
+const projects = await getSanityProjects()
 ---
 
 <!DOCTYPE html>
@@ -34,7 +36,7 @@ import '../../src/style/index.css'
      
 
      <About more={true}/>
-     <Project/>
+     <Project projects={projects}/>
      <RecentPosts />
      <ActivityFeed />
 
