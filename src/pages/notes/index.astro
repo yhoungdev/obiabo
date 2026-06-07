@@ -65,11 +65,12 @@ allViews.forEach(v => {
 
   <section class="mb-12">
     <div class="space-y-6 ">
-      {posts.map((post: {slug: {current: string}, title: string, description: string, publishedAt: string}) => {
+      {posts.map((post: {slug: {current: string}, title: string, description: string, firstPublishedAt?: string, publishedAt: string}) => {
         const postId = post.slug.current;
         const reactionsCount = reactionCounts[postId] || 0;
         const commentsCount = commentCounts[postId] || 0;
         const viewsCount = viewCounts[postId] || 0;
+        const dateAdded = post.firstPublishedAt || post.publishedAt;
         
         return (
           <div class="mt-4">
@@ -86,7 +87,7 @@ allViews.forEach(v => {
               
               <div class="flex items-center gap-4 text-sm text-gray-500">
                 <span class="italic">
-                  {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString("en-US", { dateStyle: "long" }) : 'Unknown'}
+                  {dateAdded ? new Date(dateAdded).toLocaleDateString("en-US", { dateStyle: "long" }) : 'Unknown'}
                 </span>
                 <span class="flex items-center gap-1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

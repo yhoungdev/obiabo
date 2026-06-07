@@ -15,7 +15,9 @@ import db from "@astrojs/db";
 
 export default defineConfig({
   output: 'server',
-  integrations: [tailwind(), react(), mdx(), sanity({
+  integrations: [tailwind({
+    applyBaseStyles: false,
+  }), react(), mdx(), sanity({
     projectId: '6jsm7r00',
     dataset: 'production',
    

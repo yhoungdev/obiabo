@@ -1,11 +1,11 @@
 import { sanity } from './sanityClient';
 
 export async function getSanityPosts() {
-  // GROQ query to fetch posts
-  const query = `*[_type == "post"]|order(publishedAt desc){
+  const query = `*[_type == "post"]|order(coalesce(firstPublishedAt, publishedAt) desc){
     _id,
     title,
     description,
+    firstPublishedAt,
     publishedAt,
     slug,
     tags,
