@@ -5,5 +5,6 @@ import author from './author'
 import reaction from './reaction'
 import comment from './comment'
 import project from './project'
+import about from './about'
 
-export const schemaTypes = [post, author, category, blockContent, reaction, comment, project]
+export const schemaTypes = [post, author, category, blockContent, reaction, comment, project, about]

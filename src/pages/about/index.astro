@@ -1,7 +1,11 @@
 ---
 import Header from '../../components/header/index.astro'
 import '../../style/index.css'
-import { Content as AboutMe } from '../../data/about.md'
+import { getSanityAbout } from '../../utils/getSanityAbout'
+import { renderMarkdown } from '../../utils/markdownRenderer'
+
+const about = await getSanityAbout()
+const aboutHtml = renderMarkdown(about?.fullMarkdown ?? '')
 ---
 
 
@@ -15,7 +19,9 @@ import { Content as AboutMe } from '../../data/about.md'
     <section id="about" 
         class="max-w-2xl mx-auto px-4 py-8 font-serif">
         <Header/>
-        <AboutMe/>
+        <article class="ibm-plex-mono-medium text-sm">
+            <Fragment set:html={aboutHtml} />
+        </article>
     </section>
 </body>
 </html>
